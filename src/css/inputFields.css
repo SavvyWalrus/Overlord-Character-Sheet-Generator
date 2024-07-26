@@ -1,0 +1,374 @@
+@font-face {
+    font-family: 'Calisto MT';
+    src: url('../fonts/CALIST.TTF');
+  }
+
+
+
+/* Field Containers */
+.user-input-container {
+    position: relative;
+    max-width: fit-content;
+    min-width: min-content;
+    margin-left: 2rem;
+    margin-right: auto;
+    margin-top: 6rem;
+}
+
+.template {
+    max-width: 50rem;
+}
+
+.input-fields {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.header-fields {
+    position: relative;
+    top: 0;
+    height: 6.8rem;
+}
+
+.name-fields {
+    position: relative;
+    top: -1.8rem;
+    height: 8.6rem;
+    width: 75%;
+}
+
+.description-fields {
+    position: relative;
+    top: -1.8rem;
+    height: 14.5rem;
+}
+
+.karma-fields {
+    position: relative;
+    top: -1.3rem;
+    height: 1.5rem;
+}
+
+.class-fields {
+    position: relative;
+    top: -0.5rem;
+    height: 15rem;
+}
+
+.total-level-fields {
+    position: relative;
+    top: 0;
+    height: 4.6rem;
+}
+
+.stat-fields {
+    position: relative;
+    top: 1.3rem;
+    height: 16.7rem;
+}
+
+
+
+/* Header Fields */
+.sheet-type-input input {
+    position: absolute;
+    top: 3.4rem;
+    left: 7rem;
+    width: 6rem;
+}
+
+.sheet-type-number-input input {
+    position: absolute;
+    top: 3.4rem;
+    left: 14rem;
+    width: 3rem;
+}
+
+.race-type-input input {
+    position: absolute;
+    top: 5.2rem;
+    left: 37.8rem;
+    width: 6rem;
+}
+
+
+
+/* Name Fields */
+.romanji-name-input input {
+    position: absolute;
+    top: 0.15rem;
+    left: 22.5rem;
+}
+
+.romanji-secondary-name-input input {
+    position: absolute;
+    top: 4.15rem;
+    left: 22.5rem;
+}
+
+.hiragana-name-input input {
+    position: absolute;
+    top: 5.7rem;
+    left: 22.5rem;
+}
+
+.hiragana-secondary-name-input {
+    position: absolute;
+    top: 7rem;
+    left: 22.5rem;
+}
+
+
+
+/* Description Fields */
+.epithet-input-1 input {
+    position: absolute;
+    top: 0.1rem;
+    left: 22.5rem;
+}
+
+.epithet-input-2 input {
+    position: absolute;
+    top: 1.6rem;
+    left: 22.5rem;
+}
+
+.epithet-input-3 input {
+    position: absolute;
+    top: 3.1rem;
+    left: 22.5rem;
+}
+
+.position-description-input-1 input {
+    position: absolute;
+    top: 8.05rem;
+    left: 27.7rem;
+    width: 16.5rem;
+}
+
+.position-description-input-2 input {
+    position: absolute;
+    top: 9.5rem;
+    left: 27.7rem;
+    width: 16.5rem;
+}
+
+.residence-description-input-1 input {
+    position: absolute;
+    top: 11.55rem;
+    left: 27.7rem;
+    width: 16.5rem;
+}
+
+.residence-description-input-2 input {
+    position: absolute;
+    top: 13rem;
+    left: 27.7rem;
+    width: 16.5rem;
+}
+
+
+
+/* Karma Fields */
+.alignment-text-input input {
+    position: absolute;
+    left: 27.7rem;
+    width: 7rem;
+}
+
+.karma-value-input input {
+    position: absolute;
+    left: 41rem;
+    width: 3rem;
+}
+
+
+
+/* Racial Class Fields */
+.racial-class-input-1 input {
+    position: absolute;
+    top: 0;
+    left: 27.7rem;
+}
+
+.racial-class-input-2 input {
+    position: absolute;
+    top: 1.875rem;
+    left: 27.7rem;
+}
+
+.racial-class-input-3 input {
+    position: absolute;
+    left: 27.7rem;
+    top: 3.75rem;
+}
+
+.racial-class-level-input-1 input {
+    position: absolute;
+    top: 0;
+    left: 40rem;
+    width: 2.3rem;
+}
+
+.racial-class-level-input-2 input {
+    position: absolute;
+    top: 1.875rem;
+    left: 40rem;
+    width: 2.3rem;
+}
+
+.racial-class-level-input-3 input {
+    position: absolute;
+    top: 3.75rem;
+    left: 40rem;
+    width: 2.3rem;
+}
+
+.others-text-racial-checkbox label {
+    position: absolute;
+    top: 5.4rem;
+    left: 27.95rem;
+    font-family: 'Calisto MT';
+    font-size: 0.8rem;
+}
+
+
+
+/* Job Class Fields */
+.job-class-input-1 input {
+    position: absolute;
+    top: 7.3rem;
+    left: 27.7rem;
+}
+
+.job-class-input-2 input {
+    position: absolute;
+    top: 9.175rem;
+    left: 27.7rem;
+}
+
+.job-class-input-3 input {
+    position: absolute;
+    top: 11.05rem;
+    left: 27.7rem;
+}
+
+.job-class-level-input-1 input {
+    position: absolute;
+    top: 7.3rem;
+    left: 40rem;
+    width: 2.3rem;
+}
+
+.job-class-level-input-2 input {
+    position: absolute;
+    top: 9.175rem;
+    left: 40rem;
+    width: 2.3rem;
+}
+
+.job-class-level-input-3 input {
+    position: absolute;
+    top: 11.05rem;
+    left: 40rem;
+    width: 2.3rem;
+}
+
+.others-text-job-checkbox label {
+    position: absolute;
+    top: 12.7rem;
+    left: 27.95rem;
+    font-family: 'Calisto MT';
+    font-size: 0.8rem;
+}
+
+
+
+/* Total Level Fields */
+.total-levels-input input {
+    position: absolute;
+    top: 0.1rem;
+    left: 38rem;
+    width: 4.5rem;
+}
+
+.total-racial-levels-input input {
+    position: absolute;
+    top: 3.1rem;
+    left: 25.25rem;
+    width: 2.6rem;
+}
+
+.total-job-levels-input input {
+    position: absolute;
+    top: 3.1rem;
+    left: 36.05rem;
+    width: 2.6rem;
+}
+
+
+
+/* Stat Fields */
+.hp-input input {
+    position: absolute;
+    top: 0rem;
+    left: 18rem;
+    width: 3rem;
+}
+
+.mp-input input {
+    position: absolute;
+    top: 1.85rem;
+    left: 18rem;
+    width: 3rem;
+}
+
+.phy-atk-input input {
+    position: absolute;
+    top: 3.75rem;
+    left: 18rem;
+    width: 3rem;
+}
+
+.phy-def-input input {
+    position: absolute;
+    top: 5.6rem;
+    left: 18rem;
+    width: 3rem;
+}
+
+.agility-input input {
+    position: absolute;
+    top: 7.45rem;
+    left: 18rem;
+    width: 3rem;
+}
+
+.mag-atk-input input {
+    position: absolute;
+    top: 9.35rem;
+    left: 18rem;
+    width: 3rem;
+}
+
+.mag-def-input input {
+    position: absolute;
+    top: 11.2rem;
+    left: 18rem;
+    width: 3rem;
+}
+
+.resist-input input {
+    position: absolute;
+    top: 13.08rem;
+    left: 18rem;
+    width: 3rem;
+}
+
+.special-input input {
+    position: absolute;
+    top: 14.95rem;
+    left: 18rem;
+    width: 3rem;
+}

@@ -1,0 +1,426 @@
+/* Fonts */
+@font-face {
+  font-family: 'Packard Antique Bold';
+  src: url('../fonts/PackardAntique-Bold.ttf');
+}
+@font-face {
+  font-family: 'Packard Antique';
+  src: url('../fonts/PackardAntique.ttf');
+}
+@font-face {
+  font-family: 'Shippori Mincho';
+  src: url('../fonts/ShipporiMinchoB1-ExtraBold.ttf');
+}
+@font-face {
+  font-family: 'Calisto MT';
+  src: url('../fonts/CALIST.TTF');
+}
+@font-face {
+  font-family: 'OPTIPaulDavid';
+  src: url('../fonts/OPTIPaulDavid.otf');
+}
+
+
+
+/* Template */
+.character-sheet {
+  position: relative;
+  max-width: fit-content;
+  min-width: min-content;
+  margin-left: auto;
+  margin-right: 2rem;
+  margin-top: 6rem;
+}
+
+.template {
+  max-width: 50rem;
+}
+
+
+
+/* Header text */
+.header-container {
+  position: absolute;
+  top: 2.3rem;
+  left: 7rem;
+}
+
+.sheet-type-label {
+  position: absolute;
+  top: 0.5rem;
+  font-family: 'Packard Antique';
+  font-size: small;
+}
+
+.sheet-type-number {
+  position: absolute;
+  top: -0.75rem;
+  left: 7rem;
+  font-family: 'OPTIPaulDavid';
+  font-size: 3.5rem;
+  margin: 0;
+}
+
+.race-type {
+  position: absolute;
+  top: 1.95rem;
+  left: 31rem;
+  font-family: 'Packard Antique';
+  font-size: 0.9rem;
+}
+
+
+
+/* Name text */
+.name-container {
+  position: absolute;
+  top: 2rem;
+  left: 22.5rem;
+}
+
+.romanji-name {
+  position: absolute;
+  top: 0;
+  font-family: 'Packard Antique Bold';
+  font-size: 2.6rem;
+}
+
+.secondary-letters {
+  font-size: 1.9rem;
+}
+
+.romanji-secondary-name {
+  position: absolute;
+  top: 6.5rem;
+  font-family: 'Packard Antique';
+  font-size: 0.9rem;
+  text-wrap: nowrap;
+}
+
+.hiragana-name {
+  position: absolute;
+  top: 6.6rem;
+  font-family: 'Shippori Mincho';
+  font-size: 1.6rem;
+  letter-spacing: -0.1rem;
+  text-wrap: nowrap;
+}
+
+.hiragana-secondary-name {
+  position: absolute;
+  top: 9.9rem;
+  font-family: 'Shippori Mincho';
+  font-size: 0.7rem;
+  letter-spacing: -0.12rem;
+  text-wrap: nowrap;
+}
+
+
+
+/* Epithet */
+.epithet-container {
+  position: absolute;
+  top: 13.5rem;
+  left: 22.2rem;
+  font-family: 'Packard Antique';
+}
+
+.epithet {
+  position: relative;
+  margin: 0.3rem;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  letter-spacing: 0.02rem;
+}
+
+
+
+/* Position Description */
+.position-description-container {
+  position: absolute;
+  top: 21.79rem;
+  left: 27.8rem;
+  font-family: 'Calisto MT';
+  font-size: 0.8rem;
+}
+
+.position-description {
+  position: relative;
+  margin: 0.1rem;
+}
+
+
+
+/* Residence Description */
+.residence-description-container {
+  position: absolute;
+  top: 25.28rem;
+  left: 27.8rem;
+  font-family: 'Calisto MT';
+  font-size: 0.8rem;
+}
+
+.residence-description {
+  position: relative;
+  margin: 0.1rem;
+}
+
+
+
+/* Alignment */
+.alignment-container {
+  position: absolute;
+  top: 28.05rem;
+  left: 27.5rem;
+  font-family: 'Calisto MT';
+  font-size: 0.8rem;
+}
+
+.alignment-label {
+  background-color: #eae5e2;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+.karma-value {
+  position: absolute;
+  top: 0.05rem;
+  left: 13.5rem;
+}
+
+
+
+/* Racial Levels */
+.racial-container {
+  font-family: 'Calisto MT';
+}
+
+.racial-types-container {
+  position: absolute;
+  top: 30.2rem;
+  left: 27.5rem;
+  font-size: 0.8rem;
+  line-height: 1.05rem;
+}
+
+.racial-type-1 {
+  width: fit-content;
+  background-color: #eae5e2;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+.racial-type-2 {
+  width: fit-content;
+  background-color: #eae5e2;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+.racial-type-3 {
+  width: fit-content;
+  background-color: #eae5e2;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+.racial-type-last {
+  width: fit-content;
+  background-color: #eae5e2;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  font-size: 0.7rem;
+  line-height: 0.8rem;
+}
+
+.racial-levels-container {
+  position: absolute;
+  top: 29.9rem;
+  left: 40.2rem;
+  font-family: 'OPTIPaulDavid';
+  margin: 0;
+}
+
+.racial-levels {
+  line-height: 0.37rem;
+}
+
+.lvl-num {
+  font-size: 3.2rem;
+  letter-spacing: -0.5rem;
+}
+
+.level-text {
+  font-size: 1.6rem;
+  letter-spacing: normal;
+}
+
+
+
+/* Job Classes */
+.job-class-container {
+  font-family: 'Calisto MT';
+}
+
+.job-class-type-container {
+  position: absolute;
+  top: 37.57rem;
+  left: 27.5rem;
+  font-size: 0.8rem;
+  line-height: 1.05rem;
+}
+
+.job-class-1 {
+  width: fit-content;
+  background-color: #eae5e2;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+.job-class-2 {
+  width: fit-content;
+  background-color: #eae5e2;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+.job-class-3 {
+  width: fit-content;
+  background-color: #eae5e2;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+.job-class-last {
+  width: fit-content;
+  background-color: #eae5e2;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  font-size: 0.7rem;
+  line-height: 0.8rem;
+}
+
+.job-class-levels-container {
+  position: absolute;
+  top: 37.4rem;
+  left: 39.37rem;
+  font-family: 'OPTIPaulDavid';
+  font-size: 0.8rem;
+}
+
+.job-class-levels {
+  margin: 0.8rem;
+  line-height: 0.535rem;
+}
+
+.last-filler {
+  color: #eae5e2;
+  background-color: #eae5e2;
+}
+
+
+
+/* Acquired Levels */
+.levels-container {
+  position: absolute;
+  top: 46.12rem;
+  left: 27.55rem;
+  font-family: 'Calisto MT';
+  font-size: 0.7rem;
+}
+
+.total-acquired-levels {
+  position: absolute;
+  top: 0.01rem;
+  left: 10.6rem;
+}
+
+.acquired-racial-levels {
+  position: absolute;
+  top: 2.65rem;
+}
+
+.acquired-job-class-levels {
+  position: absolute;
+  top: 2.65rem;
+  left: 10.85rem;
+}
+
+
+
+/* Stat Bars */
+.stat-bar-container {
+  position: absolute;
+  top: 52rem;
+  left: 18.1rem;
+  width: 24.93rem;
+  height: 16.9rem;
+}
+
+.stat-bar {
+  height: calc(100% / 9);
+}
+
+.stat-bar-fill {
+  position: relative;
+  background-color: #ac7fa8;
+  top: 0.5rem;
+  height: 0.85rem;
+  transition: width 0.5s;
+}
+
+
+
+/* Total Levels Bar */
+.total-levels-bar {
+  position: absolute;
+  top: 48.925rem;
+  left: 27.52rem;
+  width: 15.46rem;
+  height: 0.41rem;
+}
+
+.racial-level-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.racial-level-bar-fill {
+  background-color: #af5845;
+  height: 100%;
+  transition: width 0.5s;
+}
+
+.job-level-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.job-level-bar-fill {
+  position: relative;
+  float: right;
+  background-color: #03a5a8;
+  height: 100%;
+  transition: width 0.5s;
+}
+
+
+
+/* Character */
+.character-container {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.character {
+  position: relative;
+}
