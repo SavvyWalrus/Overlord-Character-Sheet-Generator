@@ -1,426 +1,528 @@
 /* Fonts */
-@font-face {
-  font-family: 'Packard Antique Bold';
-  src: url('../fonts/PackardAntique-Bold.ttf');
-}
-@font-face {
-  font-family: 'Packard Antique';
-  src: url('../fonts/PackardAntique.ttf');
-}
-@font-face {
-  font-family: 'Shippori Mincho';
-  src: url('../fonts/ShipporiMinchoB1-ExtraBold.ttf');
-}
-@font-face {
-  font-family: 'Calisto MT';
-  src: url('../fonts/CALIST.TTF');
-}
-@font-face {
-  font-family: 'OPTIPaulDavid';
-  src: url('../fonts/OPTIPaulDavid.otf');
-}
+	@font-face {
+		font-family: 'Packard Antique Bold';
+		src: url('../fonts/PackardAntique-Bold.ttf');
+	}
+	@font-face {
+		font-family: 'Packard Antique';
+		src: url('../fonts/PackardAntique.ttf');
+	}
+	@font-face {
+		font-family: 'Shippori Mincho';
+		src: url('../fonts/ShipporiMinchoB1-ExtraBold.ttf');
+	}
+	@font-face {
+		font-family: 'Calisto MT';
+		src: url('../fonts/CALIST.TTF');
+	}
+	@font-face {
+		font-family: 'OPTIPaulDavid';
+		src: url('../fonts/OPTIPaulDavid.otf');
+	}
 
 
 
 /* Template */
-.character-sheet {
-  position: relative;
-  max-width: fit-content;
-  min-width: min-content;
-  margin-left: auto;
-  margin-right: 2rem;
-  margin-top: 6rem;
-}
+	.character-sheet {
+	position: relative;
+	max-width: 50rem;
+	min-width: min-content;
+	margin-left: auto;
+	margin-right: 2vw;
+	margin-top: 6vh;
+	}
 
-.template {
-  max-width: 50rem;
-}
+	.character-sheet .template {
+	width: 100%;
+	}
 
 
 
 /* Header text */
-.header-container {
-  position: absolute;
-  top: 2.3rem;
-  left: 7rem;
-}
+	.header-container {
+		position: absolute;
+		top: 2.3em;
+		left: 7em;
+	}
 
-.sheet-type-label {
-  position: absolute;
-  top: 0.5rem;
-  font-family: 'Packard Antique';
-  font-size: small;
-}
+	.sheet-type-label {
+		position: absolute;
+		top: 0.5em;
+	}
 
-.sheet-type-number {
-  position: absolute;
-  top: -0.75rem;
-  left: 7rem;
-  font-family: 'OPTIPaulDavid';
-  font-size: 3.5rem;
-  margin: 0;
-}
+	.sheet-type-number {
+		position: absolute;
+		top: -0.75em;
+		left: 7em;
+	}
 
-.race-type {
-  position: absolute;
-  top: 1.95rem;
-  left: 31rem;
-  font-family: 'Packard Antique';
-  font-size: 0.9rem;
-}
+	.race-type {
+		position: absolute;
+		top: 1.95em;
+		left: 31em;
+	}
+
+	/* Font */
+	.sheet-type-label p {
+		font-family: 'Packard Antique';
+		font-size: 0.82em;
+	}
+
+	.sheet-type-number p {
+		font-family: 'OPTIPaulDavid';
+		margin: 0;
+		font-size: 3.5em;
+	}
+
+	.race-type p {
+		font-family: 'Packard Antique';
+		font-size: 0.9em;
+	}
 
 
 
 /* Name text */
-.name-container {
-  position: absolute;
-  top: 2rem;
-  left: 22.5rem;
-}
+	.name-container {
+		position: absolute;
+		top: 2em;
+		left: 22.5em;
+	}
 
-.romanji-name {
-  position: absolute;
-  top: 0;
-  font-family: 'Packard Antique Bold';
-  font-size: 2.6rem;
-}
+	.romanji-name {
+		position: absolute;
+		top: 0;
+	}
 
-.secondary-letters {
-  font-size: 1.9rem;
-}
+	.romanji-secondary-name {
+		position: absolute;
+		top: 6.5em;
+	}
 
-.romanji-secondary-name {
-  position: absolute;
-  top: 6.5rem;
-  font-family: 'Packard Antique';
-  font-size: 0.9rem;
-  text-wrap: nowrap;
-}
+	.hiragana-name {
+		position: absolute;
+		top: 6.6em;
+	}
 
-.hiragana-name {
-  position: absolute;
-  top: 6.6rem;
-  font-family: 'Shippori Mincho';
-  font-size: 1.6rem;
-  letter-spacing: -0.1rem;
-  text-wrap: nowrap;
-}
+	.hiragana-secondary-name {
+		position: absolute;
+		top: 9.9em;
+	}
 
-.hiragana-secondary-name {
-  position: absolute;
-  top: 9.9rem;
-  font-family: 'Shippori Mincho';
-  font-size: 0.7rem;
-  letter-spacing: -0.12rem;
-  text-wrap: nowrap;
-}
+	/* Text */
+	.romanji-name p {
+		font-family: 'Packard Antique Bold';
+		/* Variable must match font size */
+		--romanji-font-size: 2.6;
+		font-size: 2.6em;
+	}
+
+	.romanji-name p .secondary-letters {
+		font-size: calc(1.9em / var(--romanji-font-size));
+	}
+
+	.romanji-secondary-name p {
+		font-family: 'Packard Antique';
+		font-size: 0.9em;
+		text-wrap: nowrap;
+	}
+
+	.hiragana-name p {
+		font-family: 'Shippori Mincho';
+		font-size: 1.6em;
+		letter-spacing: -0.1em;
+		text-wrap: nowrap;
+	}
+
+	.hiragana-secondary-name p {
+		font-family: 'Shippori Mincho';
+		font-size: 0.7em;
+		letter-spacing: -0.12em;
+		text-wrap: nowrap;
+	}
 
 
 
 /* Epithet */
-.epithet-container {
-  position: absolute;
-  top: 13.5rem;
-  left: 22.2rem;
-  font-family: 'Packard Antique';
-}
+	.epithet-container {
+		position: absolute;
+		top: 12.9em;
+		left: 22.2em;
+	}
 
-.epithet {
-  position: relative;
-  margin: 0.3rem;
-  font-size: 1.6rem;
-  line-height: 1.9rem;
-  letter-spacing: 0.02rem;
-}
+	.epithet {
+		position: relative;
+		margin: 0.3em;
+	}
+
+	/* Text */
+	.epithet p {
+		font-family: 'Packard Antique';
+		font-size: 1.6em;
+		line-height: 0.4em;
+		letter-spacing: 0.02em;
+		word-spacing: -0.05em;
+	}
 
 
 
 /* Position Description */
-.position-description-container {
-  position: absolute;
-  top: 21.79rem;
-  left: 27.8rem;
-  font-family: 'Calisto MT';
-  font-size: 0.8rem;
-}
+	.position-description-container {
+		position: absolute;
+		top: 21.38em;
+		left: 27.9em;
+	}
 
-.position-description {
-  position: relative;
-  margin: 0.1rem;
-}
+	/* Text */
+	.position-description p {
+		font-family: 'Calisto MT';
+		font-size: 0.8em;
+		line-height: 0.5em;
+	}
 
 
 
 /* Residence Description */
-.residence-description-container {
-  position: absolute;
-  top: 25.28rem;
-  left: 27.8rem;
-  font-family: 'Calisto MT';
-  font-size: 0.8rem;
-}
+	.residence-description-container {
+		position: absolute;
+		top: 24.8em;
+		left: 27.9em;
+	}
 
-.residence-description {
-  position: relative;
-  margin: 0.1rem;
-}
+	/* Text */
+	.residence-description p {
+		font-family: 'Calisto MT';
+		font-size: 0.8em;
+		line-height: 0.5em;
+	}
 
 
 
 /* Alignment */
-.alignment-container {
-  position: absolute;
-  top: 28.05rem;
-  left: 27.5rem;
-  font-family: 'Calisto MT';
-  font-size: 0.8rem;
-}
+	.alignment-container {
+		position: absolute;
+		top: 28.05em;
+		left: 27.5em;
+		font-family: 'Calisto MT';
+	}
 
-.alignment-label {
-  background-color: #eae5e2;
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-}
+	.alignment-label {
+		background-color: #eae5e2;
+		padding-left: 0.4em;
+		padding-right: 0.4em;
+	}
 
-.karma-value {
-  position: absolute;
-  top: 0.05rem;
-  left: 13.5rem;
-}
+	.karma-value {
+		position: absolute;
+		top: 0.02em;
+		left: 13.5em;
+	}
+
+	/* Text */
+	.alignment-label p {
+		font-size: 0.8em;
+	}
+
+	.karma-value p {
+		font-size: 0.8em;
+	}
 
 
 
 /* Racial Levels */
-.racial-container {
-  font-family: 'Calisto MT';
-}
+	.racial-types-container {
+		position: absolute;
+		top: 30.2em;
+		left: 27.5em;
+	}
 
-.racial-types-container {
-  position: absolute;
-  top: 30.2rem;
-  left: 27.5rem;
-  font-size: 0.8rem;
-  line-height: 1.05rem;
-}
+	.racial-type-1 {
+		width: fit-content;
+		background-color: #eae5e2;
+		padding-left: 0.4em;
+		padding-right: 0.4em;
+	}
 
-.racial-type-1 {
-  width: fit-content;
-  background-color: #eae5e2;
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-}
+	.racial-type-2 {
+		width: fit-content;
+		background-color: #eae5e2;
+		padding-left: 0.4em;
+		padding-right: 0.4em;
+	}
 
-.racial-type-2 {
-  width: fit-content;
-  background-color: #eae5e2;
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-}
+	.racial-type-3 {
+		width: fit-content;
+		background-color: #eae5e2;
+		padding-left: 0.4em;
+		padding-right: 0.4em;
+	}
 
-.racial-type-3 {
-  width: fit-content;
-  background-color: #eae5e2;
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-}
+	.racial-type-last {
+		width: fit-content;
+		background-color: #eae5e2;
+		padding-left: 0.4em;
+		padding-right: 0.4em;
+	}
 
-.racial-type-last {
-  width: fit-content;
-  background-color: #eae5e2;
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-  font-size: 0.7rem;
-  line-height: 0.8rem;
-}
+	.racial-levels-container {
+		position: absolute;
+		top: 30em;
+		left: 40.2em;
+	}
 
-.racial-levels-container {
-  position: absolute;
-  top: 29.9rem;
-  left: 40.2rem;
-  font-family: 'OPTIPaulDavid';
-  margin: 0;
-}
+	/* Text */
+	.racial-types-container {
+		font-family: 'Calisto MT';
+		line-height: 1.05em;
+	}
 
-.racial-levels {
-  line-height: 0.37rem;
-}
+	.racial-type-1 p {
+		font-size: 0.8em;
+	}
 
-.lvl-num {
-  font-size: 3.2rem;
-  letter-spacing: -0.5rem;
-}
+	.racial-type-2 p {
+		font-size: 0.8em;
+	}
 
-.level-text {
-  font-size: 1.6rem;
-  letter-spacing: normal;
-}
+	.racial-type-3 p {
+		font-size: 0.8em;
+	}
+
+	.racial-type-last p {
+		/* Variable must match font size */
+		--racial-type-last-font-size: 0.7;
+		font-size: 0.7em;
+		line-height: calc(0.8em / var(--racial-type-last-font-size));
+	}
+
+	.racial-levels-container p {
+		font-family: 'OPTIPaulDavid';
+		/* Variable must match font size */
+		--racial-levels-container-p-font-size: 0.8;
+		font-size: 0.8em;
+		line-height: calc(0.53em / var(--racial-levels-container-p-font-size));
+	}
+
+	.lvl-num-H {
+		/* Variable must match font size */
+		--lvl-num-font-size: 3.2;
+		font-size: calc(3.2em / var(--racial-levels-container-p-font-size));
+		letter-spacing: calc(-0.5em / var(--lvl-num-font-size));
+	}
+
+	.level-text-H {
+		/* Variable must match font size */
+		--level-text-font-size: 1.6;
+		font-size: calc(1.6em / var(--racial-levels-container-p-font-size));
+		letter-spacing: 0;
+	}
 
 
 
 /* Job Classes */
-.job-class-container {
-  font-family: 'Calisto MT';
-}
+	.job-class-type-container {
+		position: absolute;
+		top: 37.57em;
+		left: 27.5em;
+	}
 
-.job-class-type-container {
-  position: absolute;
-  top: 37.57rem;
-  left: 27.5rem;
-  font-size: 0.8rem;
-  line-height: 1.05rem;
-}
+	.job-class-1 {
+		width: fit-content;
+		background-color: #eae5e2;
+		padding-left: 0.4em;
+		padding-right: 0.4em;
+	}
 
-.job-class-1 {
-  width: fit-content;
-  background-color: #eae5e2;
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-}
+	.job-class-2 {
+		width: fit-content;
+		background-color: #eae5e2;
+		padding-left: 0.4em;
+		padding-right: 0.4em;
+	}
 
-.job-class-2 {
-  width: fit-content;
-  background-color: #eae5e2;
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-}
+	.job-class-3 {
+		width: fit-content;
+		background-color: #eae5e2;
+		padding-left: 0.4em;
+		padding-right: 0.4em;
+	}
 
-.job-class-3 {
-  width: fit-content;
-  background-color: #eae5e2;
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-}
+	.job-class-last {
+		width: fit-content;
+		background-color: #eae5e2;
+		padding-left: 0.4em;
+		padding-right: 0.4em;
+	}
 
-.job-class-last {
-  width: fit-content;
-  background-color: #eae5e2;
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-  font-size: 0.7rem;
-  line-height: 0.8rem;
-}
+	.job-class-levels-container {
+		position: absolute;
+		top: 37.4em;
+		left: 39.37em;
+	}
 
-.job-class-levels-container {
-  position: absolute;
-  top: 37.4rem;
-  left: 39.37rem;
-  font-family: 'OPTIPaulDavid';
-  font-size: 0.8rem;
-}
+	.job-class-levels {
+		margin: 0.8em;
+	}
 
-.job-class-levels {
-  margin: 0.8rem;
-  line-height: 0.535rem;
-}
+	.last-filler {
+		color: #eae5e2;
+		background-color: #eae5e2;
+	}
 
-.last-filler {
-  color: #eae5e2;
-  background-color: #eae5e2;
-}
+	/* Text */
+	.job-class-type-container {
+		font-family: 'Calisto MT';
+		line-height: 1.05em;
+	}
+
+	.job-class-1 p {
+		font-size: 0.8em;
+	}
+
+	.job-class-2 p {
+		font-size: 0.8em;
+	}
+
+	.job-class-3 p {
+		font-size: 0.8em;
+	}
+
+	.job-class-last p {
+		/* Variable must match font size */
+		--job-class-last-font-size: 0.7;
+		font-size: 0.7em;
+		line-height: calc(0.8em / var(--job-class-last-font-size));
+	}
+
+	.job-class-levels-container p {
+		font-family: 'OPTIPaulDavid';
+		/* Variable must match font size */
+		--job-class-container-p-font-size: 0.8;
+		font-size: 0.8em;
+		line-height: calc(0.53em / var(--job-class-container-p-font-size));
+	}
+
+	.lvl-num-L {
+		/* Variable must match font size */
+		--lvl-num-font-size: 3.2;
+		font-size: calc(3.2em / var(--job-class-container-p-font-size));
+		letter-spacing: calc(-0.5em / var(--lvl-num-font-size));
+	}
+
+	.level-text-L {
+		/* Variable must match font size */
+		--level-text-font-size: 1.6;
+		font-size: calc(1.6em / var(--job-class-container-p-font-size));
+		letter-spacing: 0;
+	}
 
 
 
 /* Acquired Levels */
-.levels-container {
-  position: absolute;
-  top: 46.12rem;
-  left: 27.55rem;
-  font-family: 'Calisto MT';
-  font-size: 0.7rem;
-}
+	.levels-container {
+		position: absolute;
+		top: 46.08em;
+		left: 27.55em;
+		font-family: 'Calisto MT';
+	}
 
-.total-acquired-levels {
-  position: absolute;
-  top: 0.01rem;
-  left: 10.6rem;
-}
+	.total-acquired-levels {
+		position: absolute;
+		top: 0.01em;
+		left: 10.6em;
+	}
 
-.acquired-racial-levels {
-  position: absolute;
-  top: 2.65rem;
-}
+	.acquired-racial-levels {
+		position: absolute;
+		top: 2.61em;
+	}
 
-.acquired-job-class-levels {
-  position: absolute;
-  top: 2.65rem;
-  left: 10.85rem;
-}
+	.acquired-job-class-levels {
+		position: absolute;
+		top: 2.61em;
+		left: 10.85em;
+	}
+
+	/* Text */
+	.levels-container p {
+		font-size: 0.7em;
+	}
 
 
 
 /* Stat Bars */
 .stat-bar-container {
-  position: absolute;
-  top: 52rem;
-  left: 18.1rem;
-  width: 24.93rem;
-  height: 16.9rem;
+	position: absolute;
+	top: 52em;
+	left: 18.1em;
+	width: 24.93em;
+	height: 16.9em;
 }
 
 .stat-bar {
-  height: calc(100% / 9);
+	height: calc(100% / 9);
 }
 
 .stat-bar-fill {
-  position: relative;
-  background-color: #ac7fa8;
-  top: 0.5rem;
-  height: 0.85rem;
-  transition: width 0.5s;
+	position: relative;
+	background-color: #ac7fa8;
+	top: 0.5em;
+	height: 0.85em;
+	transition: width 0.5s;
 }
 
 
 
 /* Total Levels Bar */
 .total-levels-bar {
-  position: absolute;
-  top: 48.925rem;
-  left: 27.52rem;
-  width: 15.46rem;
-  height: 0.41rem;
+	position: absolute;
+	top: 48.925em;
+	left: 27.52em;
+	width: 15.46em;
+	height: 0.41em;
 }
 
 .racial-level-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
 }
 
 .racial-level-bar-fill {
-  background-color: #af5845;
-  height: 100%;
-  transition: width 0.5s;
+	background-color: #af5845;
+	height: 100%;
+	transition: width 0.5s;
 }
 
 .job-level-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
 }
 
 .job-level-bar-fill {
-  position: relative;
-  float: right;
-  background-color: #03a5a8;
-  height: 100%;
-  transition: width 0.5s;
+	position: relative;
+	float: right;
+	background-color: #03a5a8;
+	height: 100%;
+	transition: width 0.5s;
 }
 
 
 
 /* Character */
 .character-container {
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  z-index: -1;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
 }
 
 .character {
-  position: relative;
+	position: relative;
 }

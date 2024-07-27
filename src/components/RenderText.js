@@ -5,9 +5,9 @@ function RenderHeader(props) {
     
     return (
         <div className="header-container">
-            <p className="sheet-type-label">{jsonSettings["SheetType"]}</p>
-            <p className="sheet-type-number">{jsonSettings["SheetNum"]}</p>
-            <p className="race-type">{jsonSettings["RaceType"]}</p>
+            <div className="sheet-type-label"><p>{jsonSettings["SheetType"]}</p></div>
+            <div className="sheet-type-number"><p>{jsonSettings["SheetNum"]}</p></div>
+            <div className="race-type"><p>{jsonSettings["RaceType"]}</p></div>
         </div>
     )
 };
@@ -23,16 +23,16 @@ function RenderName(props) {
         const restOfName = upperName.slice(1);
         
         return (
-            <p className="romanji-name">{firstLetter}<span className="secondary-letters">{restOfName}</span></p>
+            <div className="romanji-name"><p>{firstLetter}<span className="secondary-letters">{restOfName}</span></p></div>
         );
     };
     
     return (
         <div className="name-container">
             {renderNameWithSpan(jsonSettings["RomanjiName"])}
-            <p className="romanji-secondary-name">{jsonSettings["RomanjiSecondaryName"]}</p>
-            <p className="hiragana-name">{jsonSettings["HiraganaName"]}</p>
-            <p className="hiragana-secondary-name">{jsonSettings["HiraganaSecondaryName"]}</p>
+            <div className="romanji-secondary-name"><p>{jsonSettings["RomanjiSecondaryName"]}</p></div>
+            <div className="hiragana-name"><p>{jsonSettings["HiraganaName"]}</p></div>
+            <div className="hiragana-secondary-name"><p>{jsonSettings["HiraganaSecondaryName"]}</p></div>
         </div>
     )
 }
@@ -42,9 +42,9 @@ function RenderEpithet(props) {
     
     return (
         <div className="epithet-container">
-            <p className="epithet">{jsonSettings["Epithet1"]}</p>
-            <p className="epithet">{jsonSettings["Epithet2"]}</p>
-            <p className="epithet">{jsonSettings["Epithet3"]}</p>
+            <div className="epithet"><p>{jsonSettings["Epithet1"]}</p></div>
+            <div className="epithet"><p>{jsonSettings["Epithet2"]}</p></div>
+            <div className="epithet"><p>{jsonSettings["Epithet3"]}</p></div>
         </div>
     )
 }
@@ -54,8 +54,8 @@ function RenderPositionDescription(props) {
     
     return (
         <div className="position-description-container">
-            <p className="position-description">{jsonSettings["Position1"]}</p>
-            <p className="position-description">{jsonSettings["Position2"]}</p>
+            <div className="position-description"><p>{jsonSettings["Position1"]}</p></div>
+            <div className="position-description"><p>{jsonSettings["Position2"]}</p></div>
         </div>
     )
 }
@@ -65,8 +65,8 @@ function RenderResidenceDescription(props) {
     
     return (
         <div className="residence-description-container">
-            <p className="residence-description">{jsonSettings["Residence1"]}</p>
-            <p className="residence-description">{jsonSettings["Residence2"]}</p>
+            <div className="residence-description"><p>{jsonSettings["Residence1"]}</p></div>
+            <div className="residence-description"><p>{jsonSettings["Residence2"]}</p></div>
         </div>
     )
 }
@@ -76,8 +76,8 @@ function RenderAlignment(props) {
     
     return (
         <div className="alignment-container">
-            <p className="alignment-label">{jsonSettings["AlignmentText"]}</p>
-            <p className="karma-value">{jsonSettings["KarmaValue"]}</p>
+            <div className="alignment-label"><p>{jsonSettings["AlignmentText"]}</p></div>
+            <div className="karma-value"><p>{jsonSettings["KarmaValue"]}</p></div>
         </div>
     )
 }
@@ -95,17 +95,17 @@ function RenderRacials(props) {
     return (
         <div className="racial-container">
             <div className="racial-types-container">
-                <p className="racial-type-1">{jsonSettings["RaceClass1"]}</p>
-                <p className="racial-type-2">{jsonSettings["RaceClass2"]}</p>
-                <p className="racial-type-3">{jsonSettings["RaceClass3"]}</p>
-                {others ? <p className="racial-type-last">Others<span className="last-filler">■■■■■■■■■■■■■■■■■■■■■■■</span></p> : <p className="last-filler">■■■■■■■■■■■■■■■■■■■■■■■■■■</p>}
-                {!raceClass1 || !raceClass2 || !raceClass3 ? <p className="last-filler">■■■■■■■■■■■■■■■■■■■■■■■■■■</p> : <p></p>}
-                {!raceClass1 && !raceClass2 && !raceClass3 ? <p className="last-filler">■■■■■■■■■■■■■■■■■■■■■■■■■■</p> : <p></p>}
+                <div className="racial-type-1"><p>{jsonSettings["RaceClass1"]}</p></div>
+                <div className="racial-type-2"><p>{jsonSettings["RaceClass2"]}</p></div>
+                <div className="racial-type-3"><p>{jsonSettings["RaceClass3"]}</p></div>
+                {others ? <div className="racial-type-last"><p>Others<span className="last-filler">■■■■■■■■■■■■■■■■■■■■■■■</span></p></div> : <div className="last-filler"><p>■■■■■■■■■■■■■■■■■■■■■■■■■■</p></div>}
+                {!raceClass1 || !raceClass2 || !raceClass3 ? <div className="last-filler"><p>■■■■■■■■■■■■■■■■■■■■■■■■■■</p></div> : <div><p></p></div>}
+                {!raceClass1 && !raceClass2 && !raceClass3 ? <div className="last-filler"><p>■■■■■■■■■■■■■■■■■■■■■■■■■■</p></div> : <div><p></p></div>}
             </div>
             <div className="racial-levels-container">
-                {raceClass1 ? <p className="racial-levels"><span className="level-text">lvl</span><span className="lvl-num">{raceLevel1}</span></p> : <p></p>}
-                {raceClass2 ? <p className="racial-levels"><span className="level-text">lvl</span><span className="lvl-num">{raceLevel2}</span></p> : <p></p>}
-                {raceClass3 ? <p className="racial-levels"><span className="level-text">lvl</span><span className="lvl-num">{raceLevel3}</span></p> : <p></p>}
+                {raceClass1 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel1}</span></p></div> : <div><p></p></div>}
+                {raceClass2 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel2}</span></p></div> : <div><p></p></div>}
+                {raceClass3 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel3}</span></p></div> : <div><p></p></div>}
             </div>
         </div>
     )
@@ -124,17 +124,17 @@ function RenderJobClasses(props) {
     return (
         <div className="job-class-container">
             <div className="job-class-type-container">
-                <p className="job-class-1">{jsonSettings["JobClass1"]}</p>
-                <p className="job-class-2">{jsonSettings["JobClass2"]}</p>
-                <p className="job-class-3">{jsonSettings["JobClass3"]}</p>
-                {others ? <p className="job-class-last">Others<span className="last-filler">■■■■■■■■■■■■■■■■■■■■■■■</span></p> : <p className="last-filler">■■■■■■■■■■■■■■■■■■■■■■■■■■</p>}
-                {!jobClass1 || !jobClass2 || !jobClass3 ? <p className="last-filler">■■■■■■■■■■■■■■■■■■■■■■■■■■</p> : <p></p>}
-                {!jobClass1 && !jobClass2 && !jobClass3 ? <p className="last-filler">■■■■■■■■■■■■■■■■■■■■■■■■■■</p> : <p></p>}
+                <div className="job-class-1"><p>{jsonSettings["JobClass1"]}</p></div>
+                <div className="job-class-2"><p>{jsonSettings["JobClass2"]}</p></div>
+                <div className="job-class-3"><p>{jsonSettings["JobClass3"]}</p></div>
+                {others ? <div className="job-class-last"><p>Others<span className="last-filler">■■■■■■■■■■■■■■■■■■■■■■■</span></p></div> : <div className="last-filler"><p>■■■■■■■■■■■■■■■■■■■■■■■■■■</p></div>}
+                {!jobClass1 || !jobClass2 || !jobClass3 ? <div className="last-filler"><p>■■■■■■■■■■■■■■■■■■■■■■■■■■</p></div> : <div><p></p></div>}
+                {!jobClass1 && !jobClass2 && !jobClass3 ? <div className="last-filler"><p>■■■■■■■■■■■■■■■■■■■■■■■■■■</p></div> : <div><p></p></div>}
             </div>
             <div className="job-class-levels-container">
-                {jobClass1 ? <div className="job-class-levels"><span className="level-text">lvl</span><span className="lvl-num">{jobLevel1}</span></div> : <div></div>}
-                {jobClass2 ? <div className="job-class-levels"><span className="level-text">lvl</span><span className="lvl-num">{jobLevel2}</span></div> : <div></div>}
-                {jobClass3 ? <div className="job-class-levels"><span className="level-text">lvl</span><span className="lvl-num">{jobLevel3}</span></div> : <div></div>}
+                {jobClass1 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel1}</span></p></div> : <div><p></p></div>}
+                {jobClass2 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel2}</span></p></div> : <div><p></p></div>}
+                {jobClass3 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel3}</span></p></div> : <div><p></p></div>}
                 <div className="job-class-levels"></div>
             </div>
         </div>
@@ -146,9 +146,9 @@ function RenderAcquiredLevels(props) {
     
     return (
         <div className="levels-container">
-            <p className="total-acquired-levels">{jsonSettings["TotalLevels"]}</p>
-            <p className="acquired-racial-levels">{jsonSettings["TotalRaceLevels"]}</p>
-            <p className="acquired-job-class-levels">{jsonSettings["TotalJobLevels"]}</p>
+            <div className="total-acquired-levels"><p>{jsonSettings["TotalLevels"]}</p></div>
+            <div className="acquired-racial-levels"><p>{jsonSettings["TotalRaceLevels"]}</p></div>
+            <div className="acquired-job-class-levels"><p>{jsonSettings["TotalJobLevels"]}</p></div>
         </div>
     )
 }
@@ -157,7 +157,7 @@ function RenderAllText(props) {
     const jsonSettings = props.jsonSettings;
 
     return (
-        <div>
+        <div className="character-sheet-subcontainer">
             <RenderHeader jsonSettings={jsonSettings}/>
             <RenderName jsonSettings={jsonSettings}/>
             <RenderEpithet jsonSettings={jsonSettings}/>

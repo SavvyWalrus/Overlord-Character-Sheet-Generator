@@ -43,7 +43,7 @@ function RenderBars(props) {
     const jsonSettings=props.jsonSettings;
 
     return (
-        <div>
+        <div className="character-sheet-subcontainer">
             <div className="stat-bar-container">
                 <StatBar label='hp' value={jsonSettings["HP"]} maxValue={100} />
                 <StatBar label='mp' value={jsonSettings["MP"]} maxValue={100} />

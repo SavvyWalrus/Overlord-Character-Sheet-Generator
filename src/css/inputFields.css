@@ -6,369 +6,617 @@
 
 
 /* Field Containers */
-.user-input-container {
-    position: relative;
-    max-width: fit-content;
-    min-width: min-content;
-    margin-left: 2rem;
-    margin-right: auto;
-    margin-top: 6rem;
-}
+    .user-input-container {
+        position: relative;
+        max-width: 50rem;
+        margin-left: 2vw;
+        margin-right: auto;
+        margin-top: 6vh;
+    }
 
-.template {
-    max-width: 50rem;
-}
+    .user-input-container .template {
+        width: 100%;
+    }
 
-.input-fields {
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
+    .input-fields {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
 
-.header-fields {
-    position: relative;
-    top: 0;
-    height: 6.8rem;
-}
+    .header-fields {
+        position: relative;
+        top: 0;
+        height: 6.8em;
+    }
 
-.name-fields {
-    position: relative;
-    top: -1.8rem;
-    height: 8.6rem;
-    width: 75%;
-}
+    .name-fields {
+        position: relative;
+        top: -1.8em;
+        height: 8.6em;
+        width: 75%;
+    }
 
-.description-fields {
-    position: relative;
-    top: -1.8rem;
-    height: 14.5rem;
-}
+    .description-fields {
+        position: relative;
+        top: -1.8em;
+        height: 14.5em;
+    }
 
-.karma-fields {
-    position: relative;
-    top: -1.3rem;
-    height: 1.5rem;
-}
+    .karma-fields {
+        position: relative;
+        top: -1.3em;
+        height: 1.5em;
+    }
 
-.class-fields {
-    position: relative;
-    top: -0.5rem;
-    height: 15rem;
-}
+    .class-fields {
+        position: relative;
+        top: -0.5em;
+        height: 15em;
+    }
 
-.total-level-fields {
-    position: relative;
-    top: 0;
-    height: 4.6rem;
-}
+    .total-level-fields {
+        position: relative;
+        top: 0;
+        height: 4.6em;
+    }
 
-.stat-fields {
-    position: relative;
-    top: 1.3rem;
-    height: 16.7rem;
-}
+    .stat-fields {
+        position: relative;
+        top: 1.3em;
+        height: 16.7em;
+    }
 
 
 
 /* Header Fields */
-.sheet-type-input input {
-    position: absolute;
-    top: 3.4rem;
-    left: 7rem;
-    width: 6rem;
-}
+    .sheet-type-input {
+        position: absolute;
+        top: 3.4em;
+        left: 7em;
+    }
 
-.sheet-type-number-input input {
-    position: absolute;
-    top: 3.4rem;
-    left: 14rem;
-    width: 3rem;
-}
+    .sheet-type-input input {
+        font-size: 0.83em;
+        width: 6em;
+        height: 1.2em;
+    }
 
-.race-type-input input {
-    position: absolute;
-    top: 5.2rem;
-    left: 37.8rem;
-    width: 6rem;
-}
+    .sheet-type-number-input {
+        position: absolute;
+        top: 3.4em;
+        left: 14em;
+    }
+
+    .sheet-type-number-input input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 1.5em;
+        height: 1.2em;
+    }
+
+    .race-type-input {
+        position: absolute;
+        top: 5.2em;
+        left: 37.8em;
+    }
+
+    .race-type-input input {
+        font-size: 0.83em;
+        width: 6em;
+        height: 1.2em;
+    }
 
 
 
 /* Name Fields */
-.romanji-name-input input {
-    position: absolute;
-    top: 0.15rem;
-    left: 22.5rem;
-}
+    .romanji-name-input {
+        position: absolute;
+        top: 0.15em;
+        left: 22.5em;
+    }
 
-.romanji-secondary-name-input input {
-    position: absolute;
-    top: 4.15rem;
-    left: 22.5rem;
-}
+    .romanji-name-input input {
+        font-size: 0.83em;
+        width: 12em;
+        height: 1.2em;
+    }
 
-.hiragana-name-input input {
-    position: absolute;
-    top: 5.7rem;
-    left: 22.5rem;
-}
+    .romanji-secondary-name-input {
+        position: absolute;
+        top: 4em;
+        left: 22.5em;
+    }
 
-.hiragana-secondary-name-input {
-    position: absolute;
-    top: 7rem;
-    left: 22.5rem;
-}
+    .romanji-secondary-name-input input {
+        font-size: 0.83em;
+        width: 12em;
+        height: 1.2em;
+    }
+
+    .hiragana-name-input {
+        position: absolute;
+        top: 5.7em;
+        left: 22.5em;
+    }
+
+    .hiragana-name-input input {
+        font-size: 0.83em;
+        width: 12em;
+        height: 1.2em;
+    }
+
+    .hiragana-secondary-name-input {
+        position: absolute;
+        top: 7em;
+        left: 22.5em;
+    }
+
+    .hiragana-secondary-name-input input {
+        font-size: 0.83em;
+        width: 12em;
+        height: 1.2em;
+    }
 
 
 
 /* Description Fields */
-.epithet-input-1 input {
-    position: absolute;
-    top: 0.1rem;
-    left: 22.5rem;
-}
+    .epithet-input-1 {
+        position: absolute;
+        top: 0.1em;
+        left: 22.5em;
+    }
 
-.epithet-input-2 input {
-    position: absolute;
-    top: 1.6rem;
-    left: 22.5rem;
-}
+    .epithet-input-1 input {
+        font-size: 0.83em;
+        width: 12em;
+        height: 1.2em;
+    }
 
-.epithet-input-3 input {
-    position: absolute;
-    top: 3.1rem;
-    left: 22.5rem;
-}
+    .epithet-input-2 {
+        position: absolute;
+        top: 1.6em;
+        left: 22.5em;
+    }
 
-.position-description-input-1 input {
-    position: absolute;
-    top: 8.05rem;
-    left: 27.7rem;
-    width: 16.5rem;
-}
+    .epithet-input-2 input {
+        font-size: 0.83em;
+        width: 12em;
+        height: 1.2em;
+    }
 
-.position-description-input-2 input {
-    position: absolute;
-    top: 9.5rem;
-    left: 27.7rem;
-    width: 16.5rem;
-}
+    .epithet-input-3 {
+        position: absolute;
+        top: 3.1em;
+        left: 22.5em;
+    }
 
-.residence-description-input-1 input {
-    position: absolute;
-    top: 11.55rem;
-    left: 27.7rem;
-    width: 16.5rem;
-}
+    .epithet-input-3 input {
+        font-size: 0.83em;
+        width: 12em;
+        height: 1.2em;
+    }
 
-.residence-description-input-2 input {
-    position: absolute;
-    top: 13rem;
-    left: 27.7rem;
-    width: 16.5rem;
-}
+    .position-description-input-1 {
+        position: absolute;
+        top: 8.05em;
+        left: 27.7em;
+    }
+
+    .position-description-input-1 input {
+        font-size: 0.83em;
+        width: 16.5em;
+        height: 1.2em;
+    }
+
+    .position-description-input-2 {
+        position: absolute;
+        top: 9.5em;
+        left: 27.7em;
+    }
+
+    .position-description-input-2 input {
+        font-size: 0.83em;
+        width: 16.5em;
+        height: 1.2em;
+    }
+
+    .residence-description-input-1 {
+        position: absolute;
+        top: 11.55em;
+        left: 27.7em;
+    }
+
+    .residence-description-input-1 input {
+        font-size: 0.83em;
+        width: 16.5em;
+        height: 1.2em;
+    }
+
+    .residence-description-input-2 {
+        position: absolute;
+        top: 13em;
+        left: 27.7em;
+    }
+
+    .residence-description-input-2 input {
+        font-size: 0.83em;
+        width: 16.5em;
+        height: 1.2em;
+    }
 
 
 
-/* Karma Fields */
-.alignment-text-input input {
-    position: absolute;
-    left: 27.7rem;
-    width: 7rem;
-}
+    /* Karma Fields */
+    .alignment-text-input {
+        position: absolute;
+        left: 27.7em;
+    }
 
-.karma-value-input input {
-    position: absolute;
-    left: 41rem;
-    width: 3rem;
-}
+    .alignment-text-input input {
+        font-size: 0.83em;
+        width: 7em;
+        height: 1.2em;
+    }
+
+    .karma-value-input {
+        position: absolute;
+        left: 41em;
+    }
+
+    .karma-value-input input {
+        font-size: 0.83em;
+        width: 4em;
+        min-width: 2.3rem;
+        height: 1.2em;
+    }
 
 
 
 /* Racial Class Fields */
-.racial-class-input-1 input {
-    position: absolute;
-    top: 0;
-    left: 27.7rem;
-}
+    .racial-class-input-1 {
+        position: absolute;
+        top: 0;
+        left: 27.7em;
+    }
 
-.racial-class-input-2 input {
-    position: absolute;
-    top: 1.875rem;
-    left: 27.7rem;
-}
+    .racial-class-input-1 input {
+        font-size: 0.83em;
+        width: 11.75em;
+        height: 1.2em;
+    }
 
-.racial-class-input-3 input {
-    position: absolute;
-    left: 27.7rem;
-    top: 3.75rem;
-}
+    .racial-class-input-2 {
+        position: absolute;
+        top: 1.875em;
+        left: 27.7em;
+    }
 
-.racial-class-level-input-1 input {
-    position: absolute;
-    top: 0;
-    left: 40rem;
-    width: 2.3rem;
-}
+    .racial-class-input-2 input {
+        font-size: 0.83em;
+        width: 11.75em;
+        height: 1.2em;
+    }
 
-.racial-class-level-input-2 input {
-    position: absolute;
-    top: 1.875rem;
-    left: 40rem;
-    width: 2.3rem;
-}
+    .racial-class-input-3 {
+        position: absolute;
+        left: 27.7em;
+        top: 3.75em;
+    }
 
-.racial-class-level-input-3 input {
-    position: absolute;
-    top: 3.75rem;
-    left: 40rem;
-    width: 2.3rem;
-}
+    .racial-class-input-3 input {
+        font-size: 0.83em;
+        width: 11.75em;
+        height: 1.2em;
+    }
 
-.others-text-racial-checkbox label {
-    position: absolute;
-    top: 5.4rem;
-    left: 27.95rem;
-    font-family: 'Calisto MT';
-    font-size: 0.8rem;
-}
+    .racial-class-level-input-1 {
+        position: absolute;
+        top: 0;
+        left: 40em;
+    }
+
+    .racial-class-level-input-1 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .racial-class-level-input-2 {
+        position: absolute;
+        top: 1.875em;
+        left: 40em;
+    }
+
+    .racial-class-level-input-2 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .racial-class-level-input-3 {
+        position: absolute;
+        top: 3.75em;
+        left: 40em;
+    }
+
+    .racial-class-level-input-3 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .others-text-racial-checkbox label {
+        position: absolute;
+        font-family: 'Calisto MT';
+        /* Variable must match font size */
+        --others-racial-font-size: 0.8;
+        font-size: 0.8em;
+        top: calc(5.3em / var(--others-racial-font-size));
+        left: calc(27.95em / var(--others-racial-font-size));
+    }
+
+    .others-text-racial-checkbox label input {
+        font-size: 1em;
+        width: 1.3em;
+    }
 
 
 
 /* Job Class Fields */
-.job-class-input-1 input {
-    position: absolute;
-    top: 7.3rem;
-    left: 27.7rem;
-}
+    .job-class-input-1 {
+        position: absolute;
+        top: 7.3em;
+        left: 27.7em;
+    }
 
-.job-class-input-2 input {
-    position: absolute;
-    top: 9.175rem;
-    left: 27.7rem;
-}
+    .job-class-input-1 input {
+        font-size: 0.83em;
+        width: 11.75em;
+        height: 1.2em;
+    }
 
-.job-class-input-3 input {
-    position: absolute;
-    top: 11.05rem;
-    left: 27.7rem;
-}
+    .job-class-input-2 {
+        position: absolute;
+        top: 9.175em;
+        left: 27.7em;
+    }
 
-.job-class-level-input-1 input {
-    position: absolute;
-    top: 7.3rem;
-    left: 40rem;
-    width: 2.3rem;
-}
+    .job-class-input-2 input {
+        font-size: 0.83em;
+        width: 11.75em;
+        height: 1.2em;
+    }
 
-.job-class-level-input-2 input {
-    position: absolute;
-    top: 9.175rem;
-    left: 40rem;
-    width: 2.3rem;
-}
+    .job-class-input-3 {
+        position: absolute;
+        top: 11.05em;
+        left: 27.7em;
+    }
 
-.job-class-level-input-3 input {
-    position: absolute;
-    top: 11.05rem;
-    left: 40rem;
-    width: 2.3rem;
-}
+    .job-class-input-3 input {
+        font-size: 0.83em;
+        width: 11.75em;
+        height: 1.2em;
+    }
 
-.others-text-job-checkbox label {
-    position: absolute;
-    top: 12.7rem;
-    left: 27.95rem;
-    font-family: 'Calisto MT';
-    font-size: 0.8rem;
-}
+    .job-class-level-input-1 {
+        position: absolute;
+        top: 7.3em;
+        left: 40em;
+    }
+
+    .job-class-level-input-1 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .job-class-level-input-2 {
+        position: absolute;
+        top: 9.175em;
+        left: 40em;
+    }
+
+    .job-class-level-input-2 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .job-class-level-input-3 {
+        position: absolute;
+        top: 11.05em;
+        left: 40em;
+    }
+
+    .job-class-level-input-3 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .others-text-job-checkbox label {
+        position: absolute;
+        font-family: 'Calisto MT';
+        /* Variable must match font size */
+        --others-job-font-size: 0.8;
+        font-size: 0.8em;
+        top: calc(12.7em / var(--others-job-font-size));
+        left: calc(27.95em / var(--others-job-font-size));
+    }
+
+    .others-text-job-checkbox label input {
+        font-size: 1em;
+        width: 1.3em;
+    }
 
 
 
 /* Total Level Fields */
-.total-levels-input input {
-    position: absolute;
-    top: 0.1rem;
-    left: 38rem;
-    width: 4.5rem;
-}
+    .total-levels-input {
+        position: absolute;
+        top: 0.1em;
+        left: 38em;
+    }
 
-.total-racial-levels-input input {
-    position: absolute;
-    top: 3.1rem;
-    left: 25.25rem;
-    width: 2.6rem;
-}
+    .total-levels-input input {
+        font-size: 0.83em;
+        width: 5.5em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
 
-.total-job-levels-input input {
-    position: absolute;
-    top: 3.1rem;
-    left: 36.05rem;
-    width: 2.6rem;
-}
+    .total-racial-levels-input {
+        position: absolute;
+        top: 3.1em;
+        left: 25em;
+    }
+
+    .total-racial-levels-input input {
+        font-size: 0.83em;
+        width: 3.3em;
+        min-width: 2.3rem;
+        height: 1.2em;
+    }
+
+    .total-job-levels-input {
+        position: absolute;
+        top: 3.1em;
+        left: 35.85em;
+    }
+
+    .total-job-levels-input input {
+        font-size: 0.83em;
+        width: 3.3em;
+        min-width: 2.3rem;
+        height: 1.2em;
+    }
 
 
 
 /* Stat Fields */
-.hp-input input {
-    position: absolute;
-    top: 0rem;
-    left: 18rem;
-    width: 3rem;
-}
+    .hp-input {
+        position: absolute;
+        top: 0em;
+        left: 18em;
+    }
 
-.mp-input input {
-    position: absolute;
-    top: 1.85rem;
-    left: 18rem;
-    width: 3rem;
-}
+    .hp-input input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2.3rem;
+        height: 1.2em;
+    }
 
-.phy-atk-input input {
-    position: absolute;
-    top: 3.75rem;
-    left: 18rem;
-    width: 3rem;
-}
+    .mp-input {
+        position: absolute;
+        top: 1.85em;
+        left: 18em;
+    }
 
-.phy-def-input input {
-    position: absolute;
-    top: 5.6rem;
-    left: 18rem;
-    width: 3rem;
-}
+    .mp-input input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2.3rem;
+        height: 1.2em;
+    }
 
-.agility-input input {
-    position: absolute;
-    top: 7.45rem;
-    left: 18rem;
-    width: 3rem;
-}
+    .phy-atk-input {
+        position: absolute;
+        top: 3.75em;
+        left: 18em;
+        width: 3em;
+    }
 
-.mag-atk-input input {
-    position: absolute;
-    top: 9.35rem;
-    left: 18rem;
-    width: 3rem;
-}
+    .phy-atk-input input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2.3rem;
+        height: 1.2em;
+    }
 
-.mag-def-input input {
-    position: absolute;
-    top: 11.2rem;
-    left: 18rem;
-    width: 3rem;
-}
+    .phy-def-input {
+        position: absolute;
+        top: 5.6em;
+        left: 18em;
+    }
 
-.resist-input input {
-    position: absolute;
-    top: 13.08rem;
-    left: 18rem;
-    width: 3rem;
-}
+    .phy-def-input input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2.3rem;
+        height: 1.2em;
+    }
 
-.special-input input {
-    position: absolute;
-    top: 14.95rem;
-    left: 18rem;
-    width: 3rem;
-}
+    .agility-input {
+        position: absolute;
+        top: 7.45em;
+        left: 18em;
+    }
+
+    .agility-input input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2.3rem;
+        height: 1.2em;
+    }
+
+    .mag-atk-input {
+        position: absolute;
+        top: 9.35em;
+        left: 18em;
+    }
+
+    .mag-atk-input input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2.3rem;
+        height: 1.2em;
+    }
+
+    .mag-def-input {
+        position: absolute;
+        top: 11.2em;
+        left: 18em;
+    }
+
+    .mag-def-input input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2.3rem;
+        height: 1.2em;
+    }
+
+    .resist-input {
+        position: absolute;
+        top: 13.08em;
+        left: 18em;
+    }
+
+    .resist-input input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2.3rem;
+        height: 1.2em;
+    }
+
+    .special-input {
+        position: absolute;
+        top: 14.95em;
+        left: 18em;
+    }
+
+    .special-input input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2.3rem;
+        height: 1.2em;
+    }
