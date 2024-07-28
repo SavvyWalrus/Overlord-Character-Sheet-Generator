@@ -89,6 +89,12 @@
         right: 11em;
     }
 
+    .current-settings-save-container button {
+        position: absolute;
+        top: 3em;
+        right: 1em;
+    }
+
 
 
 /* Header Fields */
@@ -310,44 +316,104 @@
 /* Racial Class Fields */
     .racial-class-input-1 {
         position: absolute;
-        top: 0;
-        left: 27.7em;
+        top: 1.5em;
+        left: 22.7em;
     }
 
     .racial-class-input-1 input {
         font-size: 0.83em;
-        width: 11.75em;
+        width: 9em;
         height: 1.2em;
     }
 
     .racial-class-input-2 {
         position: absolute;
-        top: 1.875em;
-        left: 27.7em;
+        top: 3em;
+        left: 22.7em;
     }
 
     .racial-class-input-2 input {
         font-size: 0.83em;
-        width: 11.75em;
+        width: 9em;
         height: 1.2em;
     }
 
     .racial-class-input-3 {
         position: absolute;
-        left: 27.7em;
-        top: 3.75em;
+        left: 22.7em;
+        top: 4.5em;
     }
 
     .racial-class-input-3 input {
         font-size: 0.83em;
-        width: 11.75em;
+        width: 9em;
+        height: 1.2em;
+    }
+
+    .racial-class-input-4 {
+        position: absolute;
+        left: 22.7em;
+        top: 6em;
+    }
+
+    .racial-class-input-4 input {
+        font-size: 0.83em;
+        width: 9em;
+        height: 1.2em;
+    }
+
+    .racial-class-input-5 {
+        position: absolute;
+        left: 22.7em;
+        top: 7.5em;
+    }
+
+    .racial-class-input-5 input {
+        font-size: 0.83em;
+        width: 9em;
+        height: 1.2em;
+    }
+
+    .racial-class-input-6 {
+        position: absolute;
+        left: 22.7em;
+        top: 9em;
+    }
+
+    .racial-class-input-6 input {
+        font-size: 0.83em;
+        width: 9em;
+        height: 1.2em;
+    }
+
+    .racial-class-input-7 {
+        position: absolute;
+        left: 22.7em;
+        top: 10.5em;
+    }
+
+    .racial-class-input-7 input {
+        font-size: 0.83em;
+        width: 9em;
+        height: 1.2em;
+    }
+
+    .racial-class-input-8 {
+        position: absolute;
+        left: 22.7em;
+        top: 12em;
+    }
+
+    .racial-class-input-8 input {
+        font-size: 0.83em;
+        width: 9em;
         height: 1.2em;
     }
 
     .racial-class-level-input-1 {
         position: absolute;
-        top: 0;
-        left: 40em;
+        top: 1.5em;
+        left: 31em;
     }
 
     .racial-class-level-input-1 input {
@@ -359,8 +425,8 @@
 
     .racial-class-level-input-2 {
         position: absolute;
-        top: 1.875em;
-        left: 40em;
+        top: 3em;
+        left: 31em;
     }
 
     .racial-class-level-input-2 input {
@@ -372,11 +438,76 @@
 
     .racial-class-level-input-3 {
         position: absolute;
-        top: 3.75em;
-        left: 40em;
+        top: 4.5em;
+        left: 31em;
     }
 
     .racial-class-level-input-3 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .racial-class-level-input-4 {
+        position: absolute;
+        top: 6em;
+        left: 31em;
+    }
+
+    .racial-class-level-input-4 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .racial-class-level-input-5 {
+        position: absolute;
+        top: 7.5em;
+        left: 31em;
+    }
+
+    .racial-class-level-input-5 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .racial-class-level-input-6 {
+        position: absolute;
+        top: 9em;
+        left: 31em;
+    }
+
+    .racial-class-level-input-6 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .racial-class-level-input-7 {
+        position: absolute;
+        top: 10.5em;
+        left: 31em;
+    }
+
+    .racial-class-level-input-7 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .racial-class-level-input-8 {
+        position: absolute;
+        top: 12em;
+        left: 31em;
+    }
+
+    .racial-class-level-input-8 input {
         font-size: 0.83em;
         width: 3em;
         min-width: 2rem;
@@ -389,7 +520,7 @@
         /* Variable must match font size */
         --others-racial-font-size: 0.8;
         font-size: 0.8em;
-        top: calc(5.3em / var(--others-racial-font-size));
+        top: calc(13.7em / var(--others-racial-font-size));
         left: calc(27.95em / var(--others-racial-font-size));
     }
 
@@ -398,49 +529,120 @@
         width: 1.3em;
     }
 
+    .visible-racial-classes-input {
+        position: absolute;
+        font-family: 'Calisto MT';
+        top: 0;
+        left: 22.7em;
+    }
+
+    .visible-racial-classes-input input {
+        width: 2.5em;
+    }
+
 
 
 /* Job Class Fields */
     .job-class-input-1 {
         position: absolute;
-        top: 7.3em;
-        left: 27.7em;
+        top: 1.5em;
+        left: 36.7em;
     }
 
     .job-class-input-1 input {
         font-size: 0.83em;
-        width: 11.75em;
+        width: 9em;
         height: 1.2em;
     }
 
     .job-class-input-2 {
         position: absolute;
-        top: 9.175em;
-        left: 27.7em;
+        top: 3em;
+        left: 36.7em;
     }
 
     .job-class-input-2 input {
         font-size: 0.83em;
-        width: 11.75em;
+        width: 9em;
         height: 1.2em;
     }
 
     .job-class-input-3 {
         position: absolute;
-        top: 11.05em;
-        left: 27.7em;
+        top: 4.5em;
+        left: 36.7em;
     }
 
     .job-class-input-3 input {
         font-size: 0.83em;
-        width: 11.75em;
+        width: 9em;
+        height: 1.2em;
+    }
+
+    .job-class-input-4 {
+        position: absolute;
+        top: 6em;
+        left: 36.7em;
+    }
+
+    .job-class-input-4 input {
+        font-size: 0.83em;
+        width: 9em;
+        height: 1.2em;
+    }
+
+    .job-class-input-5 {
+        position: absolute;
+        top: 7.5em;
+        left: 36.7em;
+    }
+
+    .job-class-input-5 input {
+        font-size: 0.83em;
+        width: 9em;
+        height: 1.2em;
+    }
+
+    .job-class-input-6 {
+        position: absolute;
+        top: 9em;
+        left: 36.7em;
+    }
+
+    .job-class-input-6 input {
+        font-size: 0.83em;
+        width: 9em;
+        height: 1.2em;
+    }
+
+    .job-class-input-7 {
+        position: absolute;
+        top: 10.5em;
+        left: 36.7em;
+    }
+
+    .job-class-input-7 input {
+        font-size: 0.83em;
+        width: 9em;
+        height: 1.2em;
+    }
+
+    .job-class-input-8 {
+        position: absolute;
+        top: 12em;
+        left: 36.7em;
+    }
+
+    .job-class-input-8 input {
+        font-size: 0.83em;
+        width: 9em;
         height: 1.2em;
     }
 
     .job-class-level-input-1 {
         position: absolute;
-        top: 7.3em;
-        left: 40em;
+        top: 1.5em;
+        left: 45em;
     }
 
     .job-class-level-input-1 input {
@@ -452,8 +654,8 @@
 
     .job-class-level-input-2 {
         position: absolute;
-        top: 9.175em;
-        left: 40em;
+        top: 3em;
+        left: 45em;
     }
 
     .job-class-level-input-2 input {
@@ -465,11 +667,76 @@
 
     .job-class-level-input-3 {
         position: absolute;
-        top: 11.05em;
-        left: 40em;
+        top: 4.5em;
+        left: 45em;
     }
 
     .job-class-level-input-3 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .job-class-level-input-4 {
+        position: absolute;
+        top: 6em;
+        left: 45em;
+    }
+
+    .job-class-level-input-4 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .job-class-level-input-5 {
+        position: absolute;
+        top: 7.5em;
+        left: 45em;
+    }
+
+    .job-class-level-input-5 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .job-class-level-input-6 {
+        position: absolute;
+        top: 9em;
+        left: 45em;
+    }
+
+    .job-class-level-input-6 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .job-class-level-input-7 {
+        position: absolute;
+        top: 10.5em;
+        left: 45em;
+    }
+
+    .job-class-level-input-7 input {
+        font-size: 0.83em;
+        width: 3em;
+        min-width: 2rem;
+        height: 1.2em;
+    }
+
+    .job-class-level-input-8 {
+        position: absolute;
+        top: 12em;
+        left: 45em;
+    }
+
+    .job-class-level-input-8 input {
         font-size: 0.83em;
         width: 3em;
         min-width: 2rem;
@@ -482,13 +749,24 @@
         /* Variable must match font size */
         --others-job-font-size: 0.8;
         font-size: 0.8em;
-        top: calc(12.7em / var(--others-job-font-size));
-        left: calc(27.95em / var(--others-job-font-size));
+        top: calc(13.7em / var(--others-job-font-size));
+        left: calc(41.95em / var(--others-job-font-size));
     }
 
     .others-text-job-checkbox label input {
         font-size: 1em;
         width: 1.3em;
+    }
+
+    .visible-job-classes-input {
+        position: absolute;
+        font-family: 'Calisto MT';
+        top: 0;
+        left: 37em;
+    }
+
+    .visible-job-classes-input input {
+        width: 2.5em;
     }
 
 

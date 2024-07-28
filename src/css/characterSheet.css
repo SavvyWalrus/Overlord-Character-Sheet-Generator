@@ -64,6 +64,7 @@
 		position: absolute;
 		top: -0.9em;
 		left: 7em;
+		letter-spacing: -0.3em;
 	}
 
 	.race-type {
@@ -187,16 +188,28 @@
 
 /* Position Description */
 	.position-description-container {
+		font-family: 'Calisto MT';
 		position: absolute;
 		top: 21.38em;
-		left: 27.9em;
+		left: 22.5em;
 	}
 
 	/* Text */
-	.position-description p {
-		font-family: 'Calisto MT';
+	#position-text {
+		font-size: 0.8em;
+		word-spacing: 4.7em;
+	}
+
+	#position-description-first-line {
 		font-size: 0.8em;
 		line-height: 0.5em;
+		margin-left: 0;
+	}
+
+	.position-description p {
+		font-size: 0.8em;
+		line-height: 0.5em;
+		margin-left: 6.74em;
 	}
 
 
@@ -204,15 +217,28 @@
 /* Residence Description */
 	.residence-description-container {
 		position: absolute;
-		top: 24.8em;
-		left: 27.9em;
+		font-family: 'Calisto MT';
+		top: 24.85em;
+		left: 22.5em;
 	}
 
 	/* Text */
-	.residence-description p {
-		font-family: 'Calisto MT';
+	#residence-text {
+		font-size: 0.8em;
+		word-spacing: 3.9em;
+		margin-left: 0;
+	}
+
+	#residence-description-first-line {
 		font-size: 0.8em;
 		line-height: 0.5em;
+		margin-left: 0;
+	}
+
+	.residence-description {
+		font-size: 0.8em;
+		line-height: 0.5em;
+		margin-left: 6.74em;
 	}
 
 
@@ -221,20 +247,31 @@
 	.alignment-container {
 		position: absolute;
 		top: 28.05em;
-		left: 27.5em;
+		left: 22.1em;
 		font-family: 'Calisto MT';
 	}
 
 	.alignment-label {
-		background-color: #eae5e2;
 		padding-left: 0.4em;
 		padding-right: 0.4em;
 	}
 
+	#alignment-text {
+		font-size: 0.8em;
+		word-spacing: 3.1em;
+	}
+
+	#input-alignment-label {
+		background-color: #eae5e2;
+		padding-left: 0.45em;
+		padding-right: 0.45em;
+	}
+
 	.karma-value {
 		position: absolute;
-		top: 0.02em;
-		left: 13.5em;
+		top: -0.1em;
+		left: 14em;
+		word-spacing: -0.15em;
 	}
 
 	/* Text */
@@ -244,7 +281,14 @@
 
 	.karma-value p {
 		font-size: 0.8em;
+		text-wrap: nowrap;
 	}
+
+	.karma-value span {
+		font-size: 1.13em;
+		text-wrap: nowrap;
+	}
+	
 
 
 
@@ -252,34 +296,33 @@
 	.racial-types-container {
 		position: absolute;
 		top: 30.2em;
-		left: 27.5em;
+		left: 22.5em;
 	}
 
-	.racial-type-1 {
+	#racial-level-1-text {
 		width: fit-content;
 		background-color: #eae5e2;
 		padding-left: 0.4em;
 		padding-right: 0.4em;
 	}
 
-	.racial-type-2 {
+	.racial-type-2,
+	.racial-type-3,
+	.racial-type-4,
+	.racial-type-5,
+	.racial-type-6,
+	.racial-type-7,
+	.racial-type-8 {
 		width: fit-content;
 		background-color: #eae5e2;
-		padding-left: 0.4em;
-		padding-right: 0.4em;
-	}
-
-	.racial-type-3 {
-		width: fit-content;
-		background-color: #eae5e2;
-		padding-left: 0.4em;
+		padding-left: 5.4em;
 		padding-right: 0.4em;
 	}
 
 	.racial-type-last {
 		width: fit-content;
 		background-color: #eae5e2;
-		padding-left: 0.4em;
+		padding-left: 5.4em;
 		padding-right: 0.4em;
 	}
 
@@ -295,15 +338,20 @@
 		line-height: 1.05em;
 	}
 
-	.racial-type-1 p {
+	#racial-levels-text {
 		font-size: 0.8em;
+		background-color: transparent;
+		margin-right: 2.05em;
 	}
 
-	.racial-type-2 p {
-		font-size: 0.8em;
-	}
-
-	.racial-type-3 p {
+	.racial-type-1 p,
+	.racial-type-2 p,
+	.racial-type-3 p,
+	.racial-type-4 p,
+	.racial-type-5 p,
+	.racial-type-6 p,
+	.racial-type-7 p,
+	.racial-type-8 p {
 		font-size: 0.8em;
 	}
 
@@ -341,41 +389,44 @@
 /* Job Classes */
 	.job-class-type-container {
 		position: absolute;
-		top: 37.57em;
-		left: 27.5em;
+		left: 22.5em;
 	}
 
-	.job-class-1 {
+	#class-levels-text {
+		font-size: 0.8em;
+		background-color: transparent;
+		margin-right: 2.5em;
+	}
+
+	#job-class-1-text {
 		width: fit-content;
 		background-color: #eae5e2;
 		padding-left: 0.4em;
 		padding-right: 0.4em;
 	}
 
-	.job-class-2 {
+	.job-class-2,
+	.job-class-3,
+	.job-class-4,
+	.job-class-5,
+	.job-class-6,
+	.job-class-7,
+	.job-class-8 {
 		width: fit-content;
 		background-color: #eae5e2;
-		padding-left: 0.4em;
-		padding-right: 0.4em;
-	}
-
-	.job-class-3 {
-		width: fit-content;
-		background-color: #eae5e2;
-		padding-left: 0.4em;
+		padding-left: 5.4em;
 		padding-right: 0.4em;
 	}
 
 	.job-class-last {
 		width: fit-content;
 		background-color: #eae5e2;
-		padding-left: 0.4em;
+		padding-left: 5.4em;
 		padding-right: 0.4em;
 	}
 
 	.job-class-levels-container {
 		position: absolute;
-		top: 37.4em;
 		left: 39.37em;
 	}
 
@@ -388,21 +439,25 @@
 		background-color: #eae5e2;
 	}
 
+	.class-levels-footer p {
+		margin: 0;
+		padding: 0.5em 1em;
+	}
+
 	/* Text */
 	.job-class-type-container {
 		font-family: 'Calisto MT';
 		line-height: 1.05em;
 	}
 
-	.job-class-1 p {
-		font-size: 0.8em;
-	}
-
-	.job-class-2 p {
-		font-size: 0.8em;
-	}
-
-	.job-class-3 p {
+	.job-class-1 p,
+	.job-class-2 p,
+	.job-class-3 p,
+	.job-class-4 p,
+	.job-class-5 p,
+	.job-class-6 p,
+	.job-class-7 p,
+	.job-class-8 p {
 		font-size: 0.8em;
 	}
 
@@ -443,12 +498,29 @@
 		top: 46.08em;
 		left: 27.55em;
 		font-family: 'Calisto MT';
+		text-wrap: nowrap;
 	}
 
 	.total-acquired-levels {
 		position: absolute;
-		top: 0.01em;
-		left: 10.6em;
+		top: 0;
+		left: 0;
+		word-spacing: 0.05em;
+	}
+
+	.total-racial-job-levels-text {
+		position: absolute;
+		top: 1.16em;
+		left: 0.6em;
+	}
+
+	#total-racial-levels-text {
+		font-size: 0.9em;
+		margin-right: 11.68em;
+	}
+
+	#total-job-levels-text {
+		font-size: 0.9em;
 	}
 
 	.acquired-racial-levels {
@@ -459,7 +531,7 @@
 	.acquired-job-class-levels {
 		position: absolute;
 		top: 2.61em;
-		left: 10.85em;
+		right: -15.45em;
 	}
 
 	/* Text */

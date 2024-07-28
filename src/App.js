@@ -8,7 +8,7 @@ import RenderBars from './components/RenderBars.js';
 import RenderCharacter from './components/RenderCharacter.js';
 import RenderAllFields from './components/InputFields.js';
 import DownloadImageButton from './components/DownloadImage.js';
-import DownloadJsonButton from './components/DownloadCurrentSettings.js';
+import SaveJson from './components/SaveJson.js'
 import RenderTemplateSettings from './components/TemplateSettings.js';
 
 function App() {
@@ -77,10 +77,10 @@ function App() {
 
       {/* Container for user input character sheet */}
       <div className='user-input-container' ref={userInputRef} style={{ fontSize }}>
-        <LoadTemplate selectedTemplate={selectedTemplate} />
+        <LoadTemplate selectedTemplate={'/images/blank-template.png'} />
         <RenderAllFields jsonSettings={jsonSettings} setJsonSettings={setJsonSettings} handleCharacterImageChange={handleCharacterImageChange} />
         <DownloadImageButton characterSheetRef={characterSheetRef} />
-        <DownloadJsonButton jsonSettings={jsonSettings} fileName={jsonSettings["RomanjiName"]} />
+        <SaveJson jsonSettings={jsonSettings} fileName={jsonSettings["RomanjiName1"] + " " + jsonSettings["RomanjiName2"]} />
       </div>
     </div>
   );

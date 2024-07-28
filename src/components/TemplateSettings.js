@@ -27,6 +27,7 @@ function RenderTemplateSettings(props) {
     const setJsonSettings = props.setJsonSettings;
     const setSelectedCharacterImage = props.setSelectedCharacterImage;
     const setSelectedTemplate = props.setSelectedTemplate;
+    const [fileNames, setFileNames] = useState([]);
 
     const handlePresetSelect = useCallback(async (selectedOption) => {
         if (!selectedOption) return; // Avoid making fetch request if no option is selected
@@ -47,12 +48,18 @@ function RenderTemplateSettings(props) {
             console.error('There has been a problem with your fetch operation:', error);
         };
     }, [setJsonSettings, setSelectedCharacterImage, setSelectedTemplate]);
-    
+
+    useEffect(() => {
+        fetch('/api/json-files')
+            .then(response => response.json())
+            .then(data => setFileNames(data))
+            .catch(error => console.error('Error fetching file names:', error));
+    }, [fileNames]);
 
     return (
         <div className="template-settings">
             <DropdownMenu onSelect={handlePresetSelect} 
-                options={["Momonga", "Narberal Gamma"]}
+                options={fileNames}
                 label="Select Preset: "
             />
         </div>
