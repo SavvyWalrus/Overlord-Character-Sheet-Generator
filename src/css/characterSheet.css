@@ -24,16 +24,26 @@
 
 /* Template */
 	.character-sheet {
-	position: relative;
-	max-width: 50rem;
-	min-width: min-content;
-	margin-left: auto;
-	margin-right: 2vw;
-	margin-top: 6vh;
+		position: relative;
+		min-width: 50rem;
+		max-width: 50rem;
+		height: fit-content;
+		margin-left: auto;
+		margin-right: 2vw;
+		margin-top: 6vh;
 	}
 
 	.character-sheet .template {
-	width: 100%;
+		display: block;
+		width: 100%;
+	}
+
+	.character-sheet-subcontainer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 
 
@@ -47,12 +57,12 @@
 
 	.sheet-type-label {
 		position: absolute;
-		top: 0.5em;
+		top: 0.3em;
 	}
 
 	.sheet-type-number {
 		position: absolute;
-		top: -0.75em;
+		top: -0.9em;
 		left: 7em;
 	}
 
@@ -105,7 +115,7 @@
 
 	.hiragana-secondary-name {
 		position: absolute;
-		top: 9.9em;
+		top: 9.8em;
 	}
 
 	/* Text */
@@ -521,6 +531,7 @@
 	left: 0;
 	z-index: -1;
 	width: 100%;
+	height: 100%;
 }
 
 .character {

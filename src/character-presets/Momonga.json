@@ -44,5 +44,6 @@
     "CharacterXpos": 0,
     "CharacterYpos": 0,
     "CharacterWidth": 85,
-    "CharacterHeight": 100
+    "CharacterHeight": 100,
+    "ImageLocation": "./images/Momonga.png"
 }

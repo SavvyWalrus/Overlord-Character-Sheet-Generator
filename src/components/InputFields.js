@@ -48,9 +48,26 @@ const Checkbox = ({ label, defaultChecked, settingName, changeSetting }) => {
     );
 };
 
+const Slider = ({ label, initialValue=0, settingName, minSetting, maxSetting, changeSetting }) => {
+    const [value, setValue] = useState(initialValue);
+
+    const handleChange = event => {
+        const newValue = Number(event.target.value);
+        setValue(newValue);
+        changeSetting(settingName, newValue);
+    };
+
+    return (
+        <label>
+            {label}<input type="range" min={minSetting} max={maxSetting} value={value} onChange={handleChange} />
+        </label>
+    );
+};
+
 function RenderAllFields(props) {
     const jsonSettings = props.jsonSettings;
     const setJsonSettings = props.setJsonSettings;
+    const handleImageChange = props.handleImageChange;
 
     const changeSetting = ( name, value ) => {
         let tempSettings = { ...jsonSettings };
@@ -127,6 +144,14 @@ function RenderAllFields(props) {
                 <div className="mag-def-input"><NumberInput initialValue={jsonSettings["MagicDefense"]} settingName="MagicDefense" changeSetting={changeSetting} /></div>
                 <div className="resist-input"><NumberInput initialValue={jsonSettings["Resistance"]} settingName="Resistance" changeSetting={changeSetting} /></div>
                 <div className="special-input"><NumberInput initialValue={jsonSettings["Special"]} settingName="Special" changeSetting={changeSetting} /></div>
+            </div>
+
+            <div className="image-fields">
+                <div className="upload-button"><label>Upload Character Image: <input type="file" accept="image/*" onChange={handleImageChange} /></label></div>
+                <div className="horizontal-image-slider"><Slider minSetting="-150"  maxSetting="150" initialValue={jsonSettings["CharacterXpos"]} settingName="CharacterXpos" changeSetting={changeSetting} /></div>
+                <div className="vertical-image-slider"><Slider minSetting="-150" maxSetting="150" initialValue={jsonSettings["CharacterYpos"]} settingName="CharacterYpos" changeSetting={changeSetting} /></div>
+                <div className="image-width-slider"><Slider minSetting="0" maxSetting="150" initialValue={jsonSettings["CharacterWidth"]} settingName="CharacterWidth" changeSetting={changeSetting} /></div>
+                <div className="image-height-slider"><Slider minSetting="0" maxSetting="150" initialValue={jsonSettings["CharacterHeight"]} settingName="CharacterHeight" changeSetting={changeSetting} /></div>
             </div>
         </div>
     );

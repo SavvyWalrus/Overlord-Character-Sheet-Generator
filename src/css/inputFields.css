@@ -8,13 +8,15 @@
 /* Field Containers */
     .user-input-container {
         position: relative;
-        max-width: 50rem;
+        min-width: 50rem;
+		max-width: 50rem;
         margin-left: 2vw;
         margin-right: auto;
         margin-top: 6vh;
     }
 
     .user-input-container .template {
+        display: block;
         width: 100%;
     }
 
@@ -66,6 +68,25 @@
         position: relative;
         top: 1.3em;
         height: 16.7em;
+    }
+
+    .image-fields {
+        position: absolute;
+        font-family: 'Calisto MT';
+        top: 0.5em;
+        left: 1em;
+    }
+
+    .image-download-container button {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+    }
+
+    .current-settings-download-container button {
+        position: absolute;
+        top: 1em;
+        right: 11em;
     }
 
 
@@ -619,4 +640,84 @@
         width: 3em;
         min-width: 2.3rem;
         height: 1.2em;
+    }
+
+
+
+/* Image Fields */
+    .upload-button input {
+        font-size: 1em;
+        width: 15em;
+    }
+
+    .horizontal-image-slider {
+        position: absolute;
+        top: 49em;
+        left: 5.9em;
+    }
+
+    .horizontal-image-slider input {
+        font-size: 1em;
+        width: 14.85em;
+    }
+
+    .vertical-image-slider {
+        position: absolute;
+        top: 4.3em;
+        left: 5.3em;
+    }
+
+    .vertical-image-slider input {
+        font-size: 1em;
+        height: 45em;
+        writing-mode: vertical-rl;
+    }
+
+    .image-width-slider {
+        position: absolute;
+        top: 46em;
+        left: 7em;
+    }
+
+    .image-width-slider input {
+        font-size: 1em;
+        width: 12.45em;
+    }
+
+    .image-height-slider {
+        position: absolute;
+        top: 4.2em;
+        left: 20.2em;
+    }
+
+    .image-height-slider input {
+        font-size: 1em;
+        height: 45em;
+        writing-mode: vertical-rl;
+    }
+
+    @-moz-document url-prefix() {
+        .horizontal-image-slider {
+            position: absolute;
+            top: 48.8em;
+            left: 5.85em;
+        }
+
+        .vertical-image-slider {
+            position: absolute;
+            top: 4.3em;
+            left: 5.1em;
+        }
+
+        .image-width-slider {
+            position: absolute;
+            top: 46em;
+            left: 7em;
+        }
+
+        .image-height-slider {
+            position: absolute;
+            top: 4.3em;
+            left: 20em;
+        }
     }
