@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import './css/App.css';
 import './css/characterSheet.css';
 import './css/inputFields.css';
-import defaultSettings from './character-presets/Momonga.json';
-import defaultImage from './images/Momonga.png';
 import LoadTemplate from './components/LoadTemplate.js';
 import RenderAllText from './components/RenderText.js';
 import RenderBars from './components/RenderBars.js';
@@ -11,11 +9,13 @@ import RenderCharacter from './components/RenderCharacter.js';
 import RenderAllFields from './components/InputFields.js';
 import DownloadImageButton from './components/DownloadImage.js';
 import DownloadJsonButton from './components/DownloadCurrentSettings.js';
+import RenderTemplateSettings from './components/TemplateSettings.js';
 
 function App() {
-  const [jsonSettings, setJsonSettings] = useState(defaultSettings);
+  const [jsonSettings, setJsonSettings] = useState({});
   const [fontSize, setFontSize] = useState();
-  const [selectedImage, setSelectedImage] = useState(defaultImage);
+  const [selectedCharacterImage, setSelectedCharacterImage] = useState(null);
+  const [selectedTemplate, setSelectedTemplate] = useState(null);
   const characterSheetRef = useRef(null);
   const userInputRef = useRef(null);
 
@@ -30,11 +30,11 @@ function App() {
   };
 
   // Sets the character image to the user upload
-  const handleImageChange = (event) => {
+  const handleCharacterImageChange = (event) => {
     const file = event.target.files[0];
 
     if (file) {
-        setSelectedImage(URL.createObjectURL(file));
+      setSelectedCharacterImage(URL.createObjectURL(file));
     }
   };
 
@@ -58,18 +58,27 @@ function App() {
     // Whole app container
     <div className='main-container'>
 
+      {/* Container for template settings */}
+      <div className='template-settings'>
+        <RenderTemplateSettings jsonSettings={jsonSettings}
+                                setJsonSettings={setJsonSettings}
+                                setSelectedTemplate={setSelectedTemplate}
+                                setSelectedCharacterImage={setSelectedCharacterImage}
+        />
+      </div>
+      
       {/* Container for the actual character sheet */}
       <div className='character-sheet' ref={characterSheetRef} style={{ fontSize }}>
-        <LoadTemplate />
+        <LoadTemplate selectedTemplate={selectedTemplate} />
         <RenderAllText jsonSettings={jsonSettings} />
         <RenderBars jsonSettings={jsonSettings} />
-        <RenderCharacter jsonSettings={jsonSettings} selectedImage={selectedImage} />
+        <RenderCharacter jsonSettings={jsonSettings} selectedCharacterImage={selectedCharacterImage} />
       </div>
 
       {/* Container for user input character sheet */}
       <div className='user-input-container' ref={userInputRef} style={{ fontSize }}>
-        <LoadTemplate />
-        <RenderAllFields jsonSettings={jsonSettings} setJsonSettings={setJsonSettings} handleImageChange={handleImageChange} />
+        <LoadTemplate selectedTemplate={selectedTemplate} />
+        <RenderAllFields jsonSettings={jsonSettings} setJsonSettings={setJsonSettings} handleCharacterImageChange={handleCharacterImageChange} />
         <DownloadImageButton characterSheetRef={characterSheetRef} />
         <DownloadJsonButton jsonSettings={jsonSettings} fileName={jsonSettings["RomanjiName"]} />
       </div>

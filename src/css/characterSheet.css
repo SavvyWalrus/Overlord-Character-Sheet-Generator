@@ -98,9 +98,14 @@
 		left: 22.5em;
 	}
 
-	.romanji-name {
+	.romanji-name-1 {
 		position: absolute;
-		top: 0;
+		top: 2.3em;
+	}
+
+	.romanji-name-2 {
+		position: absolute;
+		top: 5em;
 	}
 
 	.romanji-secondary-name {
@@ -119,15 +124,20 @@
 	}
 
 	/* Text */
-	.romanji-name p {
+	.romanji-name-1 p,
+	.romanji-name-2 p {
 		font-family: 'Packard Antique Bold';
 		/* Variable must match font size */
-		--romanji-font-size: 2.6;
-		font-size: 2.6em;
+		--romanji-font-size: 2.3;
+		font-size: 2.3em;
+		margin: 0;
+		text-wrap: nowrap;
+		letter-spacing: 0.01em;
 	}
 
-	.romanji-name p .secondary-letters {
-		font-size: calc(1.9em / var(--romanji-font-size));
+	.romanji-name-1 p .secondary-letters,
+	.romanji-name-2 p .secondary-letters {
+		font-size: calc(1.7em / var(--romanji-font-size));
 	}
 
 	.romanji-secondary-name p {

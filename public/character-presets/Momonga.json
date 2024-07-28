@@ -2,7 +2,8 @@
     "SheetType": "Character",
     "RaceType": "Heteromorph",
     "SheetNum": 1,
-    "RomanjiName": "Momonga",
+    "RomanjiName1": "Momonga",
+    "RomanjiName2": "",
     "RomanjiSecondaryName": "Ainz Ooal Gown",
     "HiraganaName": "モモンガ",
     "HiraganaSecondaryName": "アインズ・ウール・ゴウン",
@@ -45,5 +46,6 @@
     "CharacterYpos": 0,
     "CharacterWidth": 85,
     "CharacterHeight": 100,
-    "ImageLocation": "./images/Momonga.png"
+    "CharacterImageName": "Momonga.png",
+    "TemplateImageName": "blank-template.png"
 }

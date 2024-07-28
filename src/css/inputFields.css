@@ -132,13 +132,25 @@
 
 
 /* Name Fields */
-    .romanji-name-input {
+    .romanji-name-input-1 {
         position: absolute;
         top: 0.15em;
         left: 22.5em;
     }
 
-    .romanji-name-input input {
+    .romanji-name-input-1 input {
+        font-size: 0.83em;
+        width: 12em;
+        height: 1.2em;
+    }
+
+    .romanji-name-input-2 {
+        position: absolute;
+        top: 1.55em;
+        left: 22.5em;
+    }
+
+    .romanji-name-input-2 input {
         font-size: 0.83em;
         width: 12em;
         height: 1.2em;

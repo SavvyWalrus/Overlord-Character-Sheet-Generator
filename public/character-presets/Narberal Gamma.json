@@ -1,8 +1,9 @@
 {
   "SheetType": "Character",
   "RaceType": "Heteromorph",
-  "SheetNum": "1",
-  "RomanjiName": "Narberal",
+  "SheetNum": "7",
+  "RomanjiName1": "Narberal",
+  "RomanjiName2": "",
   "RomanjiSecondaryName": "",
   "HiraganaName": "",
   "HiraganaSecondaryName": "",
@@ -45,5 +46,6 @@
   "CharacterYpos": -9,
   "CharacterWidth": 77,
   "CharacterHeight": 88,
-  "ImageLocation": "./images/default_character.png"
+  "CharacterImageName": "Narberal Gamma.jpg",
+  "TemplateImageName": "blank-template.png"
 }

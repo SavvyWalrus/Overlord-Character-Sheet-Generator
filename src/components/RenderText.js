@@ -15,7 +15,9 @@ function RenderHeader(props) {
 function RenderName(props) {
     const jsonSettings=props.jsonSettings;
 
-    const renderNameWithSpan = (name) => {
+    // Key must end with a number ; numbers each element className
+    const renderNameWithSpan = (key) => {
+        const name = jsonSettings[key];
         if (!name) return <p className="romanji-name"></p>;
         
         const upperName = name.toUpperCase();
@@ -23,13 +25,14 @@ function RenderName(props) {
         const restOfName = upperName.slice(1);
         
         return (
-            <div className="romanji-name"><p>{firstLetter}<span className="secondary-letters">{restOfName}</span></p></div>
+            <div className={`romanji-name-${key[key.length - 1]}`}><p>{firstLetter}<span className="secondary-letters">{restOfName}</span></p></div>
         );
     };
     
     return (
         <div className="name-container">
-            {renderNameWithSpan(jsonSettings["RomanjiName"])}
+            {renderNameWithSpan("RomanjiName1")}
+            {renderNameWithSpan("RomanjiName2")}
             <div className="romanji-secondary-name"><p>{jsonSettings["RomanjiSecondaryName"]}</p></div>
             <div className="hiragana-name"><p>{jsonSettings["HiraganaName"]}</p></div>
             <div className="hiragana-secondary-name"><p>{jsonSettings["HiraganaSecondaryName"]}</p></div>

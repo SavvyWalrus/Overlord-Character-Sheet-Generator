@@ -6,7 +6,7 @@ function RenderCharacter(props) {
     const ypos=jsonSettings["CharacterYpos"];
     const width=jsonSettings["CharacterWidth"];
     const height=jsonSettings["CharacterHeight"];
-    const character=props.selectedImage;
+    const character=props.selectedCharacterImage;
 
     return (
         <div className="character-container">
