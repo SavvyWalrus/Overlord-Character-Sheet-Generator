@@ -16,6 +16,7 @@ function App() {
   const [fontSize, setFontSize] = useState();
   const [selectedCharacterImage, setSelectedCharacterImage] = useState(null);
   const [selectedTemplate, setSelectedTemplate] = useState(null);
+  const [fileNames, setFileNames] = useState([]);
   const characterSheetRef = useRef(null);
   const userInputRef = useRef(null);
 
@@ -31,10 +32,29 @@ function App() {
 
   // Sets the character image to the user upload
   const handleCharacterImageChange = (event) => {
+    event.preventDefault();
     const file = event.target.files[0];
 
     if (file) {
+      // Set the local image preview
       setSelectedCharacterImage(URL.createObjectURL(file));
+
+      // Create FormData object
+      const formData = new FormData();
+      formData.append('image', file);
+
+      // Send the image file to the server
+      fetch('/api/upload-image', {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Image uploaded successfully:', data);
+      })
+      .catch(error => {
+        console.error('Error uploading image:', error);
+      });
     }
   };
 
@@ -64,6 +84,7 @@ function App() {
                                 setJsonSettings={setJsonSettings}
                                 setSelectedTemplate={setSelectedTemplate}
                                 setSelectedCharacterImage={setSelectedCharacterImage}
+                                fileNames={fileNames}
         />
       </div>
       
@@ -80,7 +101,7 @@ function App() {
         <LoadTemplate selectedTemplate={'/images/blank-template.png'} />
         <RenderAllFields jsonSettings={jsonSettings} setJsonSettings={setJsonSettings} handleCharacterImageChange={handleCharacterImageChange} />
         <DownloadImageButton characterSheetRef={characterSheetRef} />
-        <SaveJson jsonSettings={jsonSettings} fileName={jsonSettings["RomanjiName1"] + " " + jsonSettings["RomanjiName2"]} />
+        <SaveJson jsonSettings={jsonSettings} setFileNames={setFileNames} fileName={jsonSettings["RomanjiName1"] + (jsonSettings["RomanjiName2"] !== "" ? " " + jsonSettings["RomanjiName2"] : "")} />
       </div>
     </div>
   );

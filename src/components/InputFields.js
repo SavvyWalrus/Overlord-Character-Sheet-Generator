@@ -79,7 +79,7 @@ const Slider = ({ label, value=0, settingName, minSetting, maxSetting, changeSet
 function RenderAllFields(props) {
     const jsonSettings = props.jsonSettings || {};
     const setJsonSettings = props.setJsonSettings;
-    const handleImageChange = props.handleImageChange;
+    const handleCharacterImageChange = props.handleCharacterImageChange;
 
     const changeSetting = ( name, value ) => {
         let tempSettings = { ...jsonSettings };
@@ -183,7 +183,7 @@ function RenderAllFields(props) {
             </div>
 
             <div className="image-fields">
-                <div className="upload-button"><label>Upload Character Image: <input type="file" accept="image/*" onChange={handleImageChange} /></label></div>
+                <div className="upload-button"><label>Upload Character Image: <input type="file" accept="image/*" onChange={handleCharacterImageChange} /></label></div>
                 <div className="horizontal-image-slider"><Slider minSetting="-150"  maxSetting="150" value={jsonSettings["CharacterXpos"]} settingName="CharacterXpos" changeSetting={changeSetting} /></div>
                 <div className="vertical-image-slider"><Slider minSetting="-150" maxSetting="150" value={jsonSettings["CharacterYpos"]} settingName="CharacterYpos" changeSetting={changeSetting} /></div>
                 <div className="image-width-slider"><Slider minSetting="0" maxSetting="150" value={jsonSettings["CharacterWidth"]} settingName="CharacterWidth" changeSetting={changeSetting} /></div>

@@ -353,13 +353,16 @@
 	.racial-type-7 p,
 	.racial-type-8 p {
 		font-size: 0.8em;
+		margin-bottom: 1.03em;
 	}
 
 	.racial-type-last p {
+		padding-bottom: 1em;
+		padding-left: 0.3em;
 		/* Variable must match font size */
 		--racial-type-last-font-size: 0.7;
 		font-size: 0.7em;
-		line-height: calc(0.8em / var(--racial-type-last-font-size));
+		line-height: calc(0.3em / var(--racial-type-last-font-size));
 	}
 
 	.racial-levels-container p {
@@ -459,13 +462,16 @@
 	.job-class-7 p,
 	.job-class-8 p {
 		font-size: 0.8em;
+		margin-bottom: 1.03em;
 	}
 
 	.job-class-last p {
+		padding-bottom: 1em;
+		padding-left: 0.3em;
 		/* Variable must match font size */
 		--job-class-last-font-size: 0.7;
 		font-size: 0.7em;
-		line-height: calc(0.8em / var(--job-class-last-font-size));
+		line-height: calc(0.3em / var(--job-class-last-font-size));
 	}
 
 	.job-class-levels-container p {

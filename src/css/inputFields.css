@@ -95,6 +95,14 @@
         right: 1em;
     }
 
+    .template-settings {
+        position: absolute;
+        top: 1em;
+        left: 3em;
+        font-family: 'Calisto MT';
+        text-wrap: nowrap;
+    }
+
 
 
 /* Header Fields */

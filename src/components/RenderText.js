@@ -134,7 +134,7 @@ function RenderClassLevels(props) {
                     {raceOthers ? <div className="racial-type-last"><p>Others<span className="last-filler">■■■■■■■■■■■■■■■■■■■■■■■■■■</span></p></div> : <div></div>}
                 </div>
                 <div className="racial-levels-container">
-                    {numVisibleRacialClasses >= 1 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel1}</span></p></div> : <div><p></p></div>}
+                    {numVisibleRacialClasses >= 1 && jsonSettings["RaceLevel1"] > 0 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel1}</span></p></div> : <div><p></p></div>}
                     {numVisibleRacialClasses >= 2 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel2}</span></p></div> : <div><p></p></div>}
                     {numVisibleRacialClasses >= 3 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel3}</span></p></div> : <div><p></p></div>}
                     {numVisibleRacialClasses >= 4 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel4}</span></p></div> : <div><p></p></div>}

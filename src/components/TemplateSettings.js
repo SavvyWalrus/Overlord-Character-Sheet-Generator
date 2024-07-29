@@ -24,10 +24,11 @@ const DropdownMenu = ({ label, options, onSelect }) => {
 };
 
 function RenderTemplateSettings(props) {
+    const jsonSettings = props.jsonSettings;
     const setJsonSettings = props.setJsonSettings;
     const setSelectedCharacterImage = props.setSelectedCharacterImage;
     const setSelectedTemplate = props.setSelectedTemplate;
-    const [fileNames, setFileNames] = useState([]);
+    const fileNames = props.fileNames;
 
     const handlePresetSelect = useCallback(async (selectedOption) => {
         if (!selectedOption) return; // Avoid making fetch request if no option is selected
@@ -49,18 +50,11 @@ function RenderTemplateSettings(props) {
         };
     }, [setJsonSettings, setSelectedCharacterImage, setSelectedTemplate]);
 
-    useEffect(() => {
-        fetch('/api/json-files')
-            .then(response => response.json())
-            .then(data => setFileNames(data))
-            .catch(error => console.error('Error fetching file names:', error));
-    }, [fileNames]);
-
     return (
         <div className="template-settings">
             <DropdownMenu onSelect={handlePresetSelect} 
                 options={fileNames}
-                label="Select Preset: "
+                label="Select Character Preset: "
             />
         </div>
     );

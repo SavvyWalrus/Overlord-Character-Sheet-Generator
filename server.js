@@ -1,15 +1,38 @@
 const express = require('express');
 const fs = require('fs');
+const multer = require('multer');
+const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 3002;
 
+// Set up storage destination and filename handling
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, path.join(__dirname, 'public/images'));
+    },
+    filename: (req, file, cb) => {
+      cb(null, file.originalname);
+    }
+  });
+  
+const upload = multer({ storage: storage });
+
 // Middleware to parse JSON request bodies
 app.use(bodyParser.json());
 
 // Serve static files from the 'public' directory
-app.use(express.static('public'));
+app.use(express.static('public/images'));
+
+// Serve static files from the 'public' directory
+app.use(express.static('public/character-presets'));
+
+app.use(cors({
+    origin: "http//localhost:3000",
+    methods: ['GET', 'POST'],
+    credentials: true,
+}));
 
 // API endpoint to get the list of JSON files
 app.get('/api/json-files', (req, res) => {
@@ -38,10 +61,20 @@ app.post('/api/save-settings', (req, res) => {
     
     fs.writeFile(filePath, JSON.stringify(data, null, 2), (err) => {
         if (err) {
+            console.error(`Error saving the file: ${err.message}`);
             return res.status(500).json({ error: 'Error saving the file.' });
         }
         res.json({ message: 'File saved successfully.' });
     });
+});
+
+// API endpoint to upload an image
+app.post('/api/upload-image', upload.single('image'), (req, res) => {
+    try {
+      res.json({ message: 'Image uploaded successfully!', file: req.file });
+    } catch (error) {
+      res.status(400).json({ error: 'Error uploading image' });
+    }
 });
 
 // Start the server
