@@ -116,7 +116,7 @@ function App() {
 
       {/* Container for user input character sheet */}
       <div className='user-input-container' ref={userInputRef} style={{ fontSize, minWidth }}>
-        <LoadTemplate selectedTemplate={'/images/blank-template.png'} />
+        <LoadTemplate selectedTemplate={'/templates/Input-Template.png'} />
         <RenderAllFields jsonSettings={jsonSettings} setJsonSettings={setJsonSettings} handleCharacterImageChange={handleCharacterImageChange} setSavedImageFileNames={setSavedImageFileNames} />
         <DownloadImageButton characterSheetRef={characterSheetRef} />
         <SaveJson jsonSettings={jsonSettings} setFileNames={setFileNames} fileName={jsonSettings["RomanjiName1"] + (jsonSettings["RomanjiName2"] !== "" ? " " + jsonSettings["RomanjiName2"] : "")} />

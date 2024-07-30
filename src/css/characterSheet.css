@@ -92,34 +92,37 @@
 
 
 /* Name text */
-	.name-container {
+	.name-container,
+	.romanji-name-1,
+	.romanji-name-2,
+	.romanji-secondary-name,
+	.hiragana-name,
+	.hiragana-secondary-name {
 		position: absolute;
+	}
+
+	.name-container {
 		top: 2em;
 		left: 22.5em;
 	}
 
 	.romanji-name-1 {
-		position: absolute;
 		top: 2.3em;
 	}
 
 	.romanji-name-2 {
-		position: absolute;
 		top: 5em;
 	}
 
 	.romanji-secondary-name {
-		position: absolute;
 		top: 6.5em;
 	}
 
 	.hiragana-name {
-		position: absolute;
 		top: 6.9em;
 	}
 
 	.hiragana-secondary-name {
-		position: absolute;
 		top: 9.8em;
 	}
 
@@ -311,13 +314,7 @@
 	.racial-type-5,
 	.racial-type-6,
 	.racial-type-7,
-	.racial-type-8 {
-		width: fit-content;
-		background-color: #eae5e2;
-		padding-left: 5.4em;
-		padding-right: 0.4em;
-	}
-
+	.racial-type-8,
 	.racial-type-last {
 		width: fit-content;
 		background-color: #eae5e2;
@@ -413,13 +410,7 @@
 	.job-class-5,
 	.job-class-6,
 	.job-class-7,
-	.job-class-8 {
-		width: fit-content;
-		background-color: #eae5e2;
-		padding-left: 5.4em;
-		padding-right: 0.4em;
-	}
-
+	.job-class-8,
 	.job-class-last {
 		width: fit-content;
 		background-color: #eae5e2;

@@ -338,204 +338,119 @@
 
 
 /* Racial Class Fields */
-    .racial-class-input-1 {
-        position: absolute;
-        top: 1.5em;
-        left: 22.7em;
-    }
-
-    .racial-class-input-1 input {
-        font-size: 0.83em;
-        width: 9em;
-        height: 1.2em;
-    }
-
-    .racial-class-input-2 {
-        position: absolute;
-        top: 3em;
-        left: 22.7em;
-    }
-
-    .racial-class-input-2 input {
-        font-size: 0.83em;
-        width: 9em;
-        height: 1.2em;
-    }
-
-    .racial-class-input-3 {
-        position: absolute;
-        left: 22.7em;
-        top: 4.5em;
-    }
-
-    .racial-class-input-3 input {
-        font-size: 0.83em;
-        width: 9em;
-        height: 1.2em;
-    }
-
-    .racial-class-input-4 {
-        position: absolute;
-        left: 22.7em;
-        top: 6em;
-    }
-
-    .racial-class-input-4 input {
-        font-size: 0.83em;
-        width: 9em;
-        height: 1.2em;
-    }
-
-    .racial-class-input-5 {
-        position: absolute;
-        left: 22.7em;
-        top: 7.5em;
-    }
-
-    .racial-class-input-5 input {
-        font-size: 0.83em;
-        width: 9em;
-        height: 1.2em;
-    }
-
-    .racial-class-input-6 {
-        position: absolute;
-        left: 22.7em;
-        top: 9em;
-    }
-
-    .racial-class-input-6 input {
-        font-size: 0.83em;
-        width: 9em;
-        height: 1.2em;
-    }
-
-    .racial-class-input-7 {
-        position: absolute;
-        left: 22.7em;
-        top: 10.5em;
-    }
-
-    .racial-class-input-7 input {
-        font-size: 0.83em;
-        width: 9em;
-        height: 1.2em;
-    }
-
+    .racial-class-input-1,
+    .racial-class-input-2,
+    .racial-class-input-3,
+    .racial-class-input-4,
+    .racial-class-input-5,
+    .racial-class-input-6,
+    .racial-class-input-7,
     .racial-class-input-8 {
         position: absolute;
         left: 22.7em;
+    }
+
+    .racial-class-input-1 {
+        top: 1.5em;
+    }
+
+    .racial-class-input-2 {
+        top: 3em;
+    }
+
+    .racial-class-input-3 {
+        top: 4.5em;
+    }
+
+    .racial-class-input-4 {
+        top: 6em;
+    }
+
+    .racial-class-input-5 {
+        top: 7.5em;
+    }
+
+    .racial-class-input-6 {
+        top: 9em;
+    }
+
+    .racial-class-input-7 {
+        top: 10.5em;
+    }
+
+    .racial-class-input-8 {
         top: 12em;
     }
 
+    .racial-class-input-1 input,
+    .racial-class-input-2 input,
+    .racial-class-input-3 input,
+    .racial-class-input-4 input,
+    .racial-class-input-5 input,
+    .racial-class-input-6 input,
+    .racial-class-input-7 input,
     .racial-class-input-8 input {
-        font-size: 0.83em;
         width: 9em;
         height: 1.2em;
-    }
-
-    .racial-class-level-input-1 {
-        position: absolute;
-        top: 1.5em;
-        left: 31em;
-    }
-
-    .racial-class-level-input-1 input {
         font-size: 0.83em;
-        width: 3em;
-        min-width: 2rem;
-        height: 1.2em;
     }
 
-    .racial-class-level-input-2 {
-        position: absolute;
-        top: 3em;
-        left: 31em;
-    }
-
-    .racial-class-level-input-2 input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2rem;
-        height: 1.2em;
-    }
-
-    .racial-class-level-input-3 {
-        position: absolute;
-        top: 4.5em;
-        left: 31em;
-    }
-
-    .racial-class-level-input-3 input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2rem;
-        height: 1.2em;
-    }
-
-    .racial-class-level-input-4 {
-        position: absolute;
-        top: 6em;
-        left: 31em;
-    }
-
-    .racial-class-level-input-4 input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2rem;
-        height: 1.2em;
-    }
-
-    .racial-class-level-input-5 {
-        position: absolute;
-        top: 7.5em;
-        left: 31em;
-    }
-
-    .racial-class-level-input-5 input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2rem;
-        height: 1.2em;
-    }
-
-    .racial-class-level-input-6 {
-        position: absolute;
-        top: 9em;
-        left: 31em;
-    }
-
-    .racial-class-level-input-6 input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2rem;
-        height: 1.2em;
-    }
-
-    .racial-class-level-input-7 {
-        position: absolute;
-        top: 10.5em;
-        left: 31em;
-    }
-
-    .racial-class-level-input-7 input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2rem;
-        height: 1.2em;
-    }
-
+    .racial-class-level-input-1,
+    .racial-class-level-input-2,
+    .racial-class-level-input-3,
+    .racial-class-level-input-4,
+    .racial-class-level-input-5,
+    .racial-class-level-input-6,
+    .racial-class-level-input-7,
     .racial-class-level-input-8 {
         position: absolute;
-        top: 12em;
         left: 31em;
     }
 
+    .racial-class-level-input-1 input,
+    .racial-class-level-input-2 input,
+    .racial-class-level-input-3 input,
+    .racial-class-level-input-4 input,
+    .racial-class-level-input-5 input,
+    .racial-class-level-input-6 input,
+    .racial-class-level-input-7 input,
     .racial-class-level-input-8 input {
         font-size: 0.83em;
         width: 3em;
         min-width: 2rem;
         height: 1.2em;
+    }
+
+    .racial-class-level-input-1 {
+        top: 1.5em;
+    }
+
+    .racial-class-level-input-2 {
+        top: 3em;
+    }
+
+    .racial-class-level-input-3 {
+        top: 4.5em;
+    }
+
+    .racial-class-level-input-4 {
+        top: 6em;
+    }
+
+    .racial-class-level-input-5 {
+        top: 7.5em;
+    }
+
+    .racial-class-level-input-6 {
+        top: 9em;
+    }
+
+    .racial-class-level-input-7 {
+        top: 10.5em;
+    }
+
+    .racial-class-level-input-8 {
+        top: 12em;
     }
 
     .others-text-racial-checkbox label {
@@ -569,199 +484,114 @@
 
 
 /* Job Class Fields */
-    .job-class-input-1 {
+    .job-class-input-1,
+    .job-class-input-2,
+    .job-class-input-3,
+    .job-class-input-4,
+    .job-class-input-5,
+    .job-class-input-6,
+    .job-class-input-7,
+    .job-class-input-8 {
         position: absolute;
-        top: 1.5em;
         left: 36.7em;
     }
 
-    .job-class-input-1 input {
-        font-size: 0.83em;
-        width: 9em;
-        height: 1.2em;
+    .job-class-input-1 {
+        top: 1.5em;
     }
 
     .job-class-input-2 {
-        position: absolute;
         top: 3em;
-        left: 36.7em;
-    }
-
-    .job-class-input-2 input {
-        font-size: 0.83em;
-        width: 9em;
-        height: 1.2em;
     }
 
     .job-class-input-3 {
-        position: absolute;
         top: 4.5em;
-        left: 36.7em;
-    }
-
-    .job-class-input-3 input {
-        font-size: 0.83em;
-        width: 9em;
-        height: 1.2em;
     }
 
     .job-class-input-4 {
-        position: absolute;
         top: 6em;
-        left: 36.7em;
-    }
-
-    .job-class-input-4 input {
-        font-size: 0.83em;
-        width: 9em;
-        height: 1.2em;
     }
 
     .job-class-input-5 {
-        position: absolute;
         top: 7.5em;
-        left: 36.7em;
-    }
-
-    .job-class-input-5 input {
-        font-size: 0.83em;
-        width: 9em;
-        height: 1.2em;
     }
 
     .job-class-input-6 {
-        position: absolute;
         top: 9em;
-        left: 36.7em;
-    }
-
-    .job-class-input-6 input {
-        font-size: 0.83em;
-        width: 9em;
-        height: 1.2em;
     }
 
     .job-class-input-7 {
-        position: absolute;
         top: 10.5em;
-        left: 36.7em;
-    }
-
-    .job-class-input-7 input {
-        font-size: 0.83em;
-        width: 9em;
-        height: 1.2em;
     }
 
     .job-class-input-8 {
-        position: absolute;
         top: 12em;
-        left: 36.7em;
     }
 
+    .job-class-input-1 input,
+    .job-class-input-2 input,
+    .job-class-input-3 input,
+    .job-class-input-4 input,
+    .job-class-input-5 input,
+    .job-class-input-6 input,
+    .job-class-input-7 input,
     .job-class-input-8 input {
         font-size: 0.83em;
         width: 9em;
         height: 1.2em;
     }
 
-    .job-class-level-input-1 {
+    .job-class-level-input-1,
+    .job-class-level-input-2,
+    .job-class-level-input-3,
+    .job-class-level-input-4,
+    .job-class-level-input-5,
+    .job-class-level-input-6,
+    .job-class-level-input-7,
+    .job-class-level-input-8 {
         position: absolute;
-        top: 1.5em;
         left: 45em;
     }
 
-    .job-class-level-input-1 input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2rem;
-        height: 1.2em;
+    .job-class-level-input-1 {
+        top: 1.5em;
     }
 
     .job-class-level-input-2 {
-        position: absolute;
         top: 3em;
-        left: 45em;
-    }
-
-    .job-class-level-input-2 input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2rem;
-        height: 1.2em;
     }
 
     .job-class-level-input-3 {
-        position: absolute;
         top: 4.5em;
-        left: 45em;
-    }
-
-    .job-class-level-input-3 input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2rem;
-        height: 1.2em;
     }
 
     .job-class-level-input-4 {
-        position: absolute;
         top: 6em;
-        left: 45em;
-    }
-
-    .job-class-level-input-4 input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2rem;
-        height: 1.2em;
     }
 
     .job-class-level-input-5 {
-        position: absolute;
         top: 7.5em;
-        left: 45em;
-    }
-
-    .job-class-level-input-5 input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2rem;
-        height: 1.2em;
     }
 
     .job-class-level-input-6 {
-        position: absolute;
         top: 9em;
-        left: 45em;
-    }
-
-    .job-class-level-input-6 input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2rem;
-        height: 1.2em;
     }
 
     .job-class-level-input-7 {
-        position: absolute;
         top: 10.5em;
-        left: 45em;
-    }
-
-    .job-class-level-input-7 input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2rem;
-        height: 1.2em;
     }
 
     .job-class-level-input-8 {
-        position: absolute;
         top: 12em;
-        left: 45em;
     }
 
+    .job-class-level-input-1 input,
+    .job-class-level-input-2 input,
+    .job-class-level-input-3 input,
+    .job-class-level-input-4 input,
+    .job-class-level-input-5 input,
+    .job-class-level-input-6 input,
+    .job-class-level-input-7 input,
     .job-class-level-input-8 input {
         font-size: 0.83em;
         width: 3em;
@@ -842,118 +672,56 @@
 
 
 /* Stat Fields */
-    .hp-input {
+    .hp-input,
+    .mp-input,
+    .phy-atk-input,
+    .phy-def-input,
+    .agility-input,
+    .mag-atk-input,
+    .mag-def-input,
+    .resist-input,
+    .special-input {
         position: absolute;
-        top: 0em;
         left: 18em;
     }
 
-    .hp-input input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2.3rem;
-        height: 1.2em;
+    .hp-input {
+        top: 0em;
     }
 
     .mp-input {
-        position: absolute;
         top: 1.85em;
-        left: 18em;
-    }
-
-    .mp-input input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2.3rem;
-        height: 1.2em;
     }
 
     .phy-atk-input {
-        position: absolute;
         top: 3.75em;
-        left: 18em;
-        width: 3em;
-    }
-
-    .phy-atk-input input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2.3rem;
-        height: 1.2em;
     }
 
     .phy-def-input {
-        position: absolute;
         top: 5.6em;
-        left: 18em;
-    }
-
-    .phy-def-input input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2.3rem;
-        height: 1.2em;
     }
 
     .agility-input {
-        position: absolute;
         top: 7.45em;
-        left: 18em;
-    }
-
-    .agility-input input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2.3rem;
-        height: 1.2em;
     }
 
     .mag-atk-input {
-        position: absolute;
         top: 9.35em;
-        left: 18em;
-    }
-
-    .mag-atk-input input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2.3rem;
-        height: 1.2em;
     }
 
     .mag-def-input {
-        position: absolute;
         top: 11.2em;
-        left: 18em;
-    }
-
-    .mag-def-input input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2.3rem;
-        height: 1.2em;
     }
 
     .resist-input {
-        position: absolute;
         top: 13.08em;
-        left: 18em;
-    }
-
-    .resist-input input {
-        font-size: 0.83em;
-        width: 3em;
-        min-width: 2.3rem;
-        height: 1.2em;
     }
 
     .special-input {
-        position: absolute;
         top: 14.95em;
-        left: 18em;
     }
 
-    .special-input input {
+    .stat-fields input {
         font-size: 0.83em;
         width: 3em;
         min-width: 2.3rem;
