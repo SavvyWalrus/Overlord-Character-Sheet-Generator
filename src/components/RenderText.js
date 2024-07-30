@@ -15,24 +15,31 @@ function RenderHeader(props) {
 function RenderName(props) {
     const jsonSettings=props.jsonSettings;
 
-    // Key must end with a number ; numbers each element className
-    const renderNameWithSpan = (key) => {
-        const name = jsonSettings[key];
-        if (!name) return <p className="romanji-name"></p>;
-        
-        const upperName = name.toUpperCase();
-        const firstLetter = upperName[0];
-        const restOfName = upperName.slice(1);
-        
+    // Capitalizes all text other than words in parentheses and then wraps all letters following the first in a span
+    const transformName = (name) => {
+        if (!name) return <p></p>;
+
+        const formattedName = name.split(' ').map((word, index) => {
+            if (word.startsWith('(')) {
+                // Preserve the case for text inside parentheses
+                return <span key={index}>{word} </span>;
+            }
+
+            const firstLetter = word[0].toUpperCase();
+            const restOfLetters = word.slice(1).toUpperCase();
+            
+            return <span key={index}>{firstLetter}{<span className="secondary-letters">{restOfLetters}</span>} </span>;
+        });
+
         return (
-            <div className={`romanji-name-${key[key.length - 1]}`}><p>{firstLetter}<span className="secondary-letters">{restOfName}</span></p></div>
-        );
-    };
+            <p>{formattedName}</p>
+        )
+    }
     
     return (
         <div className="name-container">
-            {renderNameWithSpan("RomanjiName1")}
-            {renderNameWithSpan("RomanjiName2")}
+            <div className="romanji-name-1">{transformName(jsonSettings["RomanjiName1"])}</div>
+            <div className="romanji-name-2">{transformName(jsonSettings["RomanjiName2"])}</div>
             <div className="romanji-secondary-name"><p>{jsonSettings["RomanjiSecondaryName"]}</p></div>
             <div className="hiragana-name"><p>{jsonSettings["HiraganaName"]}</p></div>
             <div className="hiragana-secondary-name"><p>{jsonSettings["HiraganaSecondaryName"]}</p></div>

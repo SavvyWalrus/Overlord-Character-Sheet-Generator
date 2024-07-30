@@ -11,6 +11,13 @@ import DownloadImageButton from './components/DownloadImage.js';
 import SaveJson from './components/SaveJson.js'
 import RenderTemplateSettings from './components/TemplateSettings.js';
 
+var RESIZABLE = false;
+var minWidth = "50rem";
+
+if (RESIZABLE) {
+  minWidth = "";
+}
+
 function App() {
   const [jsonSettings, setJsonSettings] = useState({});
   const [fontSize, setFontSize] = useState();
@@ -78,7 +85,7 @@ function App() {
     const timer = setTimeout(() => {
       handleResize();
       window.dispatchEvent(new Event('resize'));
-    }, 100);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -88,7 +95,7 @@ function App() {
     <div className='main-container'>
 
       {/* Container for template settings */}
-      <div className='template-settings'>
+      <div className='template-settings-container'>
         <RenderTemplateSettings jsonSettings={jsonSettings}
                                 setJsonSettings={setJsonSettings}
                                 setSelectedTemplate={setSelectedTemplate}
@@ -100,7 +107,7 @@ function App() {
       </div>
       
       {/* Container for the actual character sheet */}
-      <div className='character-sheet' ref={characterSheetRef} style={{ fontSize }}>
+      <div className='character-sheet' ref={characterSheetRef} style={{ fontSize, minWidth }}>
         <LoadTemplate selectedTemplate={selectedTemplate} />
         <RenderAllText jsonSettings={jsonSettings} selectedTemplateName={selectedTemplateName} />
         <RenderBars jsonSettings={jsonSettings} selectedTemplateName={selectedTemplateName} />
@@ -108,7 +115,7 @@ function App() {
       </div>
 
       {/* Container for user input character sheet */}
-      <div className='user-input-container' ref={userInputRef} style={{ fontSize }}>
+      <div className='user-input-container' ref={userInputRef} style={{ fontSize, minWidth }}>
         <LoadTemplate selectedTemplate={'/images/blank-template.png'} />
         <RenderAllFields jsonSettings={jsonSettings} setJsonSettings={setJsonSettings} handleCharacterImageChange={handleCharacterImageChange} setSavedImageFileNames={setSavedImageFileNames} />
         <DownloadImageButton characterSheetRef={characterSheetRef} />

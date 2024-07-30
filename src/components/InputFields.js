@@ -111,7 +111,7 @@ function RenderAllFields(props) {
             <div className="header-fields">
                 <div className="sheet-type-input"><TextInput value={jsonSettings["SheetType"]} settingName="SheetType" changeSetting={changeSetting} /></div>
                 <div className="race-type-input"><TextInput value={jsonSettings["RaceType"]} settingName="RaceType" changeSetting={changeSetting} /></div>
-                <div className="sheet-type-number-input"><NumberInput value={jsonSettings["SheetNum"]} settingName="SheetNum" changeSetting={changeSetting} /></div>
+                <div className="sheet-type-number-input"><NumberInput value={jsonSettings["SheetNum"]} minValue={0} settingName="SheetNum" changeSetting={changeSetting} /></div>
             </div>
 
             <div className="name-fields">
@@ -203,10 +203,10 @@ function RenderAllFields(props) {
 
             <div className="image-fields">
                 <div className="upload-button"><label>Upload Character Image: <input type="file" accept="image/*" onChange={handleImageUpload} /></label></div>
-                <div className="horizontal-image-slider"><Slider minSetting="-100"  maxSetting="100" value={jsonSettings["CharacterXpos"]} settingName="CharacterXpos" changeSetting={changeSetting} /></div>
-                <div className="vertical-image-slider"><Slider minSetting="-100" maxSetting="100" value={jsonSettings["CharacterYpos"]} settingName="CharacterYpos" changeSetting={changeSetting} /></div>
-                <div className="image-width-slider"><Slider minSetting="-100" maxSetting="100" value={jsonSettings["CharacterWidth"]} settingName="CharacterWidth" changeSetting={changeSetting} /></div>
-                <div className="image-height-slider"><Slider minSetting="-100" maxSetting="100" value={jsonSettings["CharacterHeight"]} settingName="CharacterHeight" changeSetting={changeSetting} /></div>
+                <div className="horizontal-image-slider"><Slider minSetting="-200"  maxSetting="200" value={jsonSettings["CharacterXpos"]} settingName="CharacterXpos" changeSetting={changeSetting} /></div>
+                <div className="vertical-image-slider"><Slider minSetting="-200" maxSetting="200" value={jsonSettings["CharacterYpos"]} settingName="CharacterYpos" changeSetting={changeSetting} /></div>
+                <div className="image-width-slider"><Slider minSetting="-200" maxSetting="200" value={jsonSettings["CharacterWidth"]} settingName="CharacterWidth" changeSetting={changeSetting} /></div>
+                <div className="image-height-slider"><Slider minSetting="-200" maxSetting="200" value={jsonSettings["CharacterHeight"]} settingName="CharacterHeight" changeSetting={changeSetting} /></div>
             </div>
         </div>
     );
