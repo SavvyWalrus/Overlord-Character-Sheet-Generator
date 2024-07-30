@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import { toast, ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const SaveJson = (props) => {
@@ -34,11 +34,11 @@ const SaveJson = (props) => {
       })
         .then(response => response.json())
         .then(data => {
-          // toast.success('Settings saved successfully!');
+          toast.success('Settings saved successfully!');
           setFinishedSaving(true);
         })
         .catch(error => {
-          // toast.error('Error saving settings.');
+          toast.error('Error saving settings.');
           console.error('Error saving the file:', error);
         });
     } catch (error) {
@@ -65,7 +65,7 @@ const SaveJson = (props) => {
       </div>
       <div className='current-settings-save-container'>
         <button type="button" onClick={handleSaveJson}>Save Current Settings</button>
-        {/* <ToastContainer position="top-right" autoClose={5000} /> */}
+        <ToastContainer position="top-right" autoClose={5000} />
       </div>
     </div>
   );

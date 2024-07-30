@@ -13,26 +13,40 @@ function StatBar({ label, value=0, maxValue=100 }) {
     );
 };
 
-function RacialLevelBar({ value=0, maxValue=100 }) {
+function RacialLevelBar({ value=0, maxValue=100, selectedTemplateName }) {
     const percentage = (value / maxValue) * 100;
+    let classNameTail = ""
+
+    if (selectedTemplateName === "Heteromorph-Demihuman.png") {
+        classNameTail = "-heteromorph-demihuman";
+    } else {
+        classNameTail = "-human";
+    }
 
     return (
         <div className={`racial-level-bar`}>
             <div 
-                className="racial-level-bar-fill" 
+                className={`racial-level-bar-fill${classNameTail}`} 
                 style={{ width: `${percentage}%` }}
             ></div>
         </div>
     );
 };
 
-function JobLevelBar({ value=0, maxValue=100 }) {
+function JobLevelBar({ value=0, maxValue=100, selectedTemplateName }) {
     const percentage = (value / maxValue) * 100;
+    let classNameTail = ""
+
+    if (selectedTemplateName === "Heteromorph-Demihuman.png") {
+        classNameTail = "-heteromorph-demihuman";
+    } else {
+        classNameTail = "-human";
+    }
 
     return (
         <div className={`job-level-bar`}>
             <div 
-                className="job-level-bar-fill" 
+                className={`job-level-bar-fill${classNameTail}`} 
                 style={{ width: `${percentage}%`}}
             ></div>
         </div>
@@ -41,6 +55,7 @@ function JobLevelBar({ value=0, maxValue=100 }) {
 
 function RenderBars(props) {
     const jsonSettings=props.jsonSettings;
+    const selectedTemplateName=props.selectedTemplateName;
 
     return (
         <div className="character-sheet-subcontainer">
@@ -56,8 +71,8 @@ function RenderBars(props) {
                 <StatBar label='special' value={jsonSettings["Special"]} maxValue={100} />
             </div>
             <div className="total-levels-bar">
-                <RacialLevelBar value={jsonSettings["TotalRaceLevels"]} />
-                <JobLevelBar value={jsonSettings["TotalJobLevels"]} />
+                <RacialLevelBar value={jsonSettings["TotalRaceLevels"]} selectedTemplateName={selectedTemplateName} />
+                <JobLevelBar value={jsonSettings["TotalJobLevels"]} selectedTemplateName={selectedTemplateName} />
             </div>
         </div>
     );

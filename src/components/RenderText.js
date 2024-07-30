@@ -174,19 +174,28 @@ function RenderClassLevels(props) {
 
 function RenderAcquiredLevels(props) {
     const jsonSettings=props.jsonSettings;
+    const selectedTemplateName=props.selectedTemplateName;
+    let classNameTail = ""
+
+    if (selectedTemplateName === "Heteromorph-Demihuman.png") {
+        classNameTail = "-heteromorph-demihuman";
+    } else {
+        classNameTail = "-human";
+    }
     
     return (
         <div className="levels-container">
-            <div className="total-acquired-levels"><p>{"[Racial Levels] + [Class Levels] = "}{jsonSettings["TotalLevels"]} Total Levels</p></div>
-            <div className="total-racial-job-levels-text"><p><span id="total-racial-levels-text">Racial Levels</span><span id="total-job-levels-text">Class Levels</span></p></div>
-            <div className="acquired-racial-levels"><p>{jsonSettings["TotalRaceLevels"]} acquired total</p></div>
-            <div className="acquired-job-class-levels"><p>{jsonSettings["TotalJobLevels"]} acquired total</p></div>
+            <div className={`total-acquired-levels${classNameTail}`}><p>{"[Racial Levels] + [Class Levels] = "}{jsonSettings["TotalLevels"]} Total Levels</p></div>
+            <div className="total-racial-job-levels-text"><p><span id={`total-racial-levels-text${classNameTail}`}>Racial Levels</span><span id="total-job-levels-text">Class Levels</span></p></div>
+            <div className={`acquired-racial-levels${classNameTail}`}><p>{jsonSettings["TotalRaceLevels"]} acquired total</p></div>
+            <div className={`acquired-job-class-levels${classNameTail}`}><p>{jsonSettings["TotalJobLevels"]} acquired total</p></div>
         </div>
     )
 }
 
 function RenderAllText(props) {
     const jsonSettings = props.jsonSettings;
+    const selectedTemplateName = props.selectedTemplateName;
 
     return (
         <div className="character-sheet-subcontainer">
@@ -197,7 +206,7 @@ function RenderAllText(props) {
             <RenderResidenceDescription jsonSettings={jsonSettings}/>
             <RenderAlignment jsonSettings={jsonSettings}/>
             <RenderClassLevels jsonSettings={jsonSettings}/>
-            <RenderAcquiredLevels jsonSettings={jsonSettings}/>
+            <RenderAcquiredLevels jsonSettings={jsonSettings} selectedTemplateName={selectedTemplateName}/>
         </div>
     )
 }

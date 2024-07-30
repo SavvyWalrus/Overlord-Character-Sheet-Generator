@@ -64,10 +64,10 @@
   "MagicDefense": 75,
   "Resistance": 70,
   "Special": 90,
-  "CharacterXpos": 119,
-  "CharacterYpos": 52,
-  "CharacterWidth": 30,
-  "CharacterHeight": 72,
-  "CharacterImageName": "Aura Bella Fiora.jpg",
-  "TemplateImageName": "blank-template-dynamic-classes.png"
+  "CharacterXpos": 0,
+  "CharacterYpos": 0,
+  "CharacterWidth": 0,
+  "CharacterHeight": 0,
+  "CharacterImageName": "03-Aura.jpg",
+  "TemplateImageName": "Humanoid.png"
 }

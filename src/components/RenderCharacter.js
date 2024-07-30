@@ -13,7 +13,7 @@ function RenderCharacter(props) {
             <img className="character"
                 src={character}
                 alt="portrait of character"
-                style={{left: `calc(${xpos / 10 - 30}em + 50%)`, top: `${ypos / 10}em`, width: `${width / 2}em`, height: `${height / 1.6}em`}}
+                style={{left: `calc(${xpos / 15 - 18}em + 50%)`, top: `${ypos / 15 + 4.96}em`, width: `${width / 8 + 14.8}em`, height: `${height / 5 + 45}em`}}
             />
         </div>
     );

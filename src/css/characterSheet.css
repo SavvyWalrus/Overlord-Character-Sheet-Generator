@@ -507,7 +507,7 @@
 		text-wrap: nowrap;
 	}
 
-	.total-acquired-levels {
+	.total-acquired-levels-heteromorph-demihuman {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -520,24 +520,42 @@
 		left: 0.6em;
 	}
 
-	#total-racial-levels-text {
+	.total-acquired-levels-human {
+		display: none;
+	}
+
+	#total-racial-levels-text-heteromorph-demihuman {
 		font-size: 0.9em;
 		margin-right: 11.68em;
+	}
+
+	#total-racial-levels-text-human {
+		display: none;
 	}
 
 	#total-job-levels-text {
 		font-size: 0.9em;
 	}
 
-	.acquired-racial-levels {
+	.acquired-racial-levels-heteromorph-demihuman {
 		position: absolute;
 		top: 2.61em;
 	}
 
-	.acquired-job-class-levels {
+	.acquired-job-class-levels-heteromorph-demihuman {
 		position: absolute;
 		top: 2.61em;
 		right: -15.45em;
+	}
+
+	.acquired-racial-levels-human {
+		display: none;
+	}
+
+	.acquired-job-class-levels-human {
+		position: absolute;
+		top: 2.61em;
+		left: 0;
 	}
 
 	/* Text */
@@ -587,10 +605,14 @@
 	width: 100%;
 }
 
-.racial-level-bar-fill {
+.racial-level-bar-fill-heteromorph-demihuman {
 	background-color: #af5845;
 	height: 100%;
 	transition: width 0.5s;
+}
+
+.racial-level-bar-fill-human {
+	display: none;
 }
 
 .job-level-bar {
@@ -601,9 +623,16 @@
 	width: 100%;
 }
 
-.job-level-bar-fill {
+.job-level-bar-fill-heteromorph-demihuman {
 	position: relative;
 	float: right;
+	background-color: #03a5a8;
+	height: 100%;
+	transition: width 0.5s;
+}
+
+.job-level-bar-fill-human {
+	position: relative;
 	background-color: #03a5a8;
 	height: 100%;
 	transition: width 0.5s;

@@ -80,12 +80,31 @@ function RenderAllFields(props) {
     const jsonSettings = props.jsonSettings || {};
     const setJsonSettings = props.setJsonSettings;
     const handleCharacterImageChange = props.handleCharacterImageChange;
+    const setSavedImageFileNames = props.setSavedImageFileNames;
+    const [detectedImageUpload, setDetectedImageUpload] = useState(true);
 
     const changeSetting = ( name, value ) => {
         let tempSettings = { ...jsonSettings };
         tempSettings[name] = value;
         setJsonSettings(tempSettings);
     }
+
+    const handleImageUpload = (event) => {
+        setDetectedImageUpload(true);
+        handleCharacterImageChange(event);
+    }
+
+    useEffect(() => {
+        if (detectedImageUpload) {
+            setDetectedImageUpload(false);
+            fetch('/api/image-files')
+                .then(response => response.json())
+                .then(data => {
+                    setSavedImageFileNames(data);
+                })
+                .catch(error => console.error('Error fetching image file names:', error));
+        }
+    }, [detectedImageUpload, setSavedImageFileNames]);
 
     return (
         <div className="input-fields">
@@ -183,11 +202,11 @@ function RenderAllFields(props) {
             </div>
 
             <div className="image-fields">
-                <div className="upload-button"><label>Upload Character Image: <input type="file" accept="image/*" onChange={handleCharacterImageChange} /></label></div>
-                <div className="horizontal-image-slider"><Slider minSetting="-150"  maxSetting="150" value={jsonSettings["CharacterXpos"]} settingName="CharacterXpos" changeSetting={changeSetting} /></div>
-                <div className="vertical-image-slider"><Slider minSetting="-150" maxSetting="150" value={jsonSettings["CharacterYpos"]} settingName="CharacterYpos" changeSetting={changeSetting} /></div>
-                <div className="image-width-slider"><Slider minSetting="0" maxSetting="150" value={jsonSettings["CharacterWidth"]} settingName="CharacterWidth" changeSetting={changeSetting} /></div>
-                <div className="image-height-slider"><Slider minSetting="0" maxSetting="150" value={jsonSettings["CharacterHeight"]} settingName="CharacterHeight" changeSetting={changeSetting} /></div>
+                <div className="upload-button"><label>Upload Character Image: <input type="file" accept="image/*" onChange={handleImageUpload} /></label></div>
+                <div className="horizontal-image-slider"><Slider minSetting="-100"  maxSetting="100" value={jsonSettings["CharacterXpos"]} settingName="CharacterXpos" changeSetting={changeSetting} /></div>
+                <div className="vertical-image-slider"><Slider minSetting="-100" maxSetting="100" value={jsonSettings["CharacterYpos"]} settingName="CharacterYpos" changeSetting={changeSetting} /></div>
+                <div className="image-width-slider"><Slider minSetting="-100" maxSetting="100" value={jsonSettings["CharacterWidth"]} settingName="CharacterWidth" changeSetting={changeSetting} /></div>
+                <div className="image-height-slider"><Slider minSetting="-100" maxSetting="100" value={jsonSettings["CharacterHeight"]} settingName="CharacterHeight" changeSetting={changeSetting} /></div>
             </div>
         </div>
     );

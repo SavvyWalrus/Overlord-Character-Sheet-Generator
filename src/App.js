@@ -16,7 +16,9 @@ function App() {
   const [fontSize, setFontSize] = useState();
   const [selectedCharacterImage, setSelectedCharacterImage] = useState(null);
   const [selectedTemplate, setSelectedTemplate] = useState(null);
+  const [selectedTemplateName, setSelectedTemplateName] = useState("")
   const [fileNames, setFileNames] = useState([]);
+  const [savedImageFileNames, setSavedImageFileNames] = useState([]);
   const characterSheetRef = useRef(null);
   const userInputRef = useRef(null);
 
@@ -36,9 +38,6 @@ function App() {
     const file = event.target.files[0];
 
     if (file) {
-      // Set the local image preview
-      setSelectedCharacterImage(URL.createObjectURL(file));
-
       // Create FormData object
       const formData = new FormData();
       formData.append('image', file);
@@ -50,7 +49,17 @@ function App() {
       })
       .then(response => response.json())
       .then(data => {
-        console.log('Image uploaded successfully:', data);
+        if (data.file) {
+          const imageUrl = `/user-files/saved-images/${data.file.filename}`;
+          setSelectedCharacterImage(imageUrl);
+          console.log('Image uploaded successfully:', data);
+          let tempSettings = {...jsonSettings};
+          tempSettings["CharacterImageName"] = data.file.filename;
+          setJsonSettings(tempSettings);
+
+        } else {
+          console.error('Image upload failed:', data.error);
+        }
       })
       .catch(error => {
         console.error('Error uploading image:', error);
@@ -83,23 +92,25 @@ function App() {
         <RenderTemplateSettings jsonSettings={jsonSettings}
                                 setJsonSettings={setJsonSettings}
                                 setSelectedTemplate={setSelectedTemplate}
+                                setSelectedTemplateName={setSelectedTemplateName}
                                 setSelectedCharacterImage={setSelectedCharacterImage}
                                 fileNames={fileNames}
+                                savedImageFileNames={savedImageFileNames}
         />
       </div>
       
       {/* Container for the actual character sheet */}
       <div className='character-sheet' ref={characterSheetRef} style={{ fontSize }}>
         <LoadTemplate selectedTemplate={selectedTemplate} />
-        <RenderAllText jsonSettings={jsonSettings} />
-        <RenderBars jsonSettings={jsonSettings} />
+        <RenderAllText jsonSettings={jsonSettings} selectedTemplateName={selectedTemplateName} />
+        <RenderBars jsonSettings={jsonSettings} selectedTemplateName={selectedTemplateName} />
         <RenderCharacter jsonSettings={jsonSettings} selectedCharacterImage={selectedCharacterImage} />
       </div>
 
       {/* Container for user input character sheet */}
       <div className='user-input-container' ref={userInputRef} style={{ fontSize }}>
         <LoadTemplate selectedTemplate={'/images/blank-template.png'} />
-        <RenderAllFields jsonSettings={jsonSettings} setJsonSettings={setJsonSettings} handleCharacterImageChange={handleCharacterImageChange} />
+        <RenderAllFields jsonSettings={jsonSettings} setJsonSettings={setJsonSettings} handleCharacterImageChange={handleCharacterImageChange} setSavedImageFileNames={setSavedImageFileNames} />
         <DownloadImageButton characterSheetRef={characterSheetRef} />
         <SaveJson jsonSettings={jsonSettings} setFileNames={setFileNames} fileName={jsonSettings["RomanjiName1"] + (jsonSettings["RomanjiName2"] !== "" ? " " + jsonSettings["RomanjiName2"] : "")} />
       </div>
