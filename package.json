@@ -22,11 +22,12 @@
     "start": "concurrently \"npm run start-react\" \"npm run start-server\"",
     "start-react": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "electron build",
     "eject": "react-scripts eject",
     "start-server": "node server.js",
     "electron": "electron .",
-    "dev" : "nf start"
+    "dev": "nf start",
+    "dist": "electron-builder"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +52,19 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "concurrently": "^8.2.2",
     "electron": "^31.3.1",
+    "electron-builder": "^24.13.3",
     "foreman": "^3.0.1"
+  },
+  "build": {
+    "appId": "com.xxx.xxx",
+    "productName": "xxx",
+    "files": [
+      "**/*",
+      "build"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "extends": null
   }
 }
