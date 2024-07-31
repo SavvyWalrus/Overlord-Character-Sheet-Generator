@@ -2,6 +2,8 @@
   "name": "generator",
   "version": "0.1.0",
   "private": true,
+  "main": "src/electron-starter.js",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -22,7 +24,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-server": "node server.js"
+    "start-server": "node server.js",
+    "electron": "electron .",
+    "dev" : "nf start"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +49,8 @@
   "proxy": "http://localhost:3001",
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "electron": "^31.3.1",
+    "foreman": "^3.0.1"
   }
 }
