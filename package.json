@@ -1,6 +1,8 @@
 {
-  "name": "generator",
-  "version": "0.1.0",
+  "name": "character-sheet-builder",
+  "version": "1.0.0",
+  "author": "SavvyWalrus",
+  "description": "A tool for building Overlord Character Sheets",
   "private": true,
   "main": "src/electron-starter.js",
   "homepage": "./",
@@ -56,12 +58,12 @@
     "foreman": "^3.0.1"
   },
   "build": {
-    "appId": "com.xxx.xxx",
-    "productName": "xxx",
+    "appId": "com.overlordsheetbuilder",
+    "productName": "Overlord Character Sheet Builder",
+    "artifactName": "${productName}-setup-${version}.${ext}",
     "files": [
       "build/**/*",
       "src/electron-starter.js",
-      "src/electron-wait-react",
       "src/preload.js",
       "package.json",
       "server.js"
@@ -76,8 +78,23 @@
       }
     ],
     "directories": {
+      "output": "dist",
       "buildResources": "build"
     },
-    "extends": null
+    "asar": true,
+    "extends": null,
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icons/win/icon.ico"
+    },
+    "portable": {
+        "artifactName": "${productName}.${ext}"
+    },
+    "publish": {
+      "provider": "github",
+      "repo": "Overlord-Character-Sheet-Generator",
+      "owner": "SavvyWalrus",
+      "releaseType": "release"
+    }
   }
 }

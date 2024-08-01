@@ -2,6 +2,7 @@ const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const url = require('url');
 const serverApp = require('../server')
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 console.log(path.join(__dirname, 'preload.js'))
 // Keep a global reference of the window object, if you don't, the window will
@@ -33,7 +34,7 @@ function createWindow() {
     mainWindow.loadURL(startUrl);
 
     // Open the DevTools.
-    mainWindow.webContents.openDevTools();
+    if (isDevelopment) mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function () {
