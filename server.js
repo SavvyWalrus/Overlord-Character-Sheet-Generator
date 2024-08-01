@@ -6,10 +6,10 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const serverApp = express();
 const port = 3001;
-const isProduction = process.env.NODE_ENV === 'production';
 
 function getBasePath() {
-  return isProduction ? path.join(process.resourcesPath, '../user-files') : path.join(__dirname, '../user-files');
+    const isDevelopment = process.env.NODE_ENV === 'development';
+    return isDevelopment ? 'user-files' : path.join(process.resourcesPath, 'user-files');
 }
 
 const userFilesPath = getBasePath();

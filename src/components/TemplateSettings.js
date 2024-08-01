@@ -55,13 +55,13 @@ function RenderTemplateSettings(props) {
         if (!selectedOption) return; // Avoid making fetch request if no option is selected
         
         try {
-            const jsonResponse = await fetch(`${basePath}saved-presets/${selectedOption}.json`); // FIXME
+            const jsonResponse = await fetch(`${basePath}/saved-presets/${selectedOption}.json`);
             if (!jsonResponse.ok) {
                 throw new Error('Network response was not ok');
             }
             const newSettings = await jsonResponse.json();
-            const newCharacterImage = `${basePath}saved-images/${newSettings["CharacterImageName"]}`;
-            const newTemplateImage = `${basePath}templates/${newSettings["TemplateImageName"]}`;
+            const newCharacterImage = `${basePath}/saved-images/${newSettings["CharacterImageName"]}`;
+            const newTemplateImage = `${basePath}/templates/${newSettings["TemplateImageName"]}`;
 
             setJsonSettings(newSettings);
             setSelectedTemplate(newTemplateImage);
@@ -76,7 +76,7 @@ function RenderTemplateSettings(props) {
         if (!selectedOption) return; // Avoid making fetch request if no option is selected
         
         try {
-            const response = await fetch(`${basePath}saved-images/${selectedOption}`); //FIXME
+            const response = await fetch(`${basePath}/saved-images/${selectedOption}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -100,7 +100,7 @@ function RenderTemplateSettings(props) {
         if (!selectedOption) return; // Avoid making fetch request if no option is selected
         
         try {
-            const response = await fetch(`${basePath}/templates/${selectedOption}`); // FIXME
+            const response = await fetch(`${basePath}/templates/${selectedOption}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }

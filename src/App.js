@@ -19,9 +19,8 @@ if (RESIZABLE) {
 }
 
 function getBasePath() {
-  //return 'user-files/'; // Comment out on production
-  const isProduction = window.electronAPI ? true : false;
-  return isProduction ? window.electronAPI.getResourcePath() + '/user-files/': 'user-files/';
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  return isDevelopment ? 'user-files/' : window.electronAPI.getResourcePath() + '/user-files';
 }
 
 function App() {

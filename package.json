@@ -19,14 +19,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"npm run start-react\" \"npm run start-server\"",
-    "start-react": "react-scripts start",
+    "start": "cross-env NODE_ENV=development concurrently \"npm run start-react\" \"npm run start-server\"",
+    "start-react": "cross-env NODE_ENV=development react-scripts start",
     "build": "react-scripts build",
     "test": "electron build",
     "eject": "react-scripts eject",
-    "start-server": "node server.js",
-    "electron": "electron .",
-    "dev": "nf start",
+    "start-server": "cross-env NODE_ENV=development node server.js",
+    "electron": "cross-env NODE_ENV=development electron .",
+    "dev": "cross-env NODE_ENV=development nf start",
     "dist": "electron-builder"
   },
   "eslintConfig": {
