@@ -1,15 +1,13 @@
-const electron = require('electron');
-// Module to control application life.
-const app = electron.app;
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow;
-
+const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const url = require('url');
+const serverApp = require('../server')
 
+console.log(path.join(__dirname, 'preload.js'))
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
+let server;
 
 function createWindow() {
     const startUrl = process.env.ELECTRON_START_URL || url.format({
@@ -19,7 +17,17 @@ function createWindow() {
     });
 
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: 800, height: 600});
+    mainWindow = new BrowserWindow({
+        width: 800,
+        height: 600,
+        webPreferences: {
+            preload: path.join(__dirname, 'preload.js'), // Path to your preload script
+            contextIsolation: true, // Important for security, especially when exposing APIs
+            enableRemoteModule: false, // Disable the remote module for security reasons
+            nodeIntegration: false,
+            sandbox: false
+        }
+    });
 
     // and load the index.html of the app.
     mainWindow.loadURL(startUrl);
@@ -39,7 +47,10 @@ function createWindow() {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+app.on('ready', () => {
+    createWindow();
+    server = serverApp.listen(3001, () => console.log(`Server is running at http://localhost:3001`));
+});
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
@@ -48,6 +59,7 @@ app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') {
         app.quit()
     }
+    if (server) server.close()
 });
 
 app.on('activate', function () {

@@ -25,7 +25,7 @@ const SaveJson = (props) => {
     event.preventDefault();
 
     try {
-      fetch('/api/save-settings', {
+      fetch('http://localhost:3001/api/save-settings', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const SaveJson = (props) => {
   useEffect(() => {
     if (finishedSaving) {
       setFinishedSaving(false);
-      fetch('/api/json-files')
+      fetch('http://localhost:3001/api/json-files')
         .then(response => response.json())
         .then(data => {
           setFileNames(data);

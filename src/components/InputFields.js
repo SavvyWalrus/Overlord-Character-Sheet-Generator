@@ -103,7 +103,7 @@ function RenderAllFields(props) {
     useEffect(() => {
         if (detectedImageUpload) {
             setDetectedImageUpload(false);
-            fetch('/api/image-files')
+            fetch('http://localhost:3001/api/image-files')
                 .then(response => response.json())
                 .then(data => {
                     setSavedImageFileNames(data);

@@ -4,13 +4,20 @@ const multer = require('multer');
 const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
-const app = express();
+const serverApp = express();
 const port = 3001;
+const isProduction = process.env.NODE_ENV === 'production';
+
+function getBasePath() {
+  return isProduction ? path.join(process.resourcesPath, '../user-files') : path.join(__dirname, '../user-files');
+}
+
+const userFilesPath = getBasePath();
 
 // Set up storage destination and filename handling
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, path.join(__dirname, 'user-files/saved-images'));
+      cb(null, path.join(userFilesPath, 'saved-images'));
     },
     filename: (req, file, cb) => {
       cb(null, file.originalname);
@@ -20,23 +27,23 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Middleware to parse JSON request bodies
-app.use(bodyParser.json());
+serverApp.use(bodyParser.json());
 
 // Serve static files from the 'user-files' directory
-app.use('/user-files', express.static(path.join(__dirname, 'user-files')));
+serverApp.use('/user-files', express.static(userFilesPath));
 
-app.use(cors({
-    origin: "http//localhost:3000",
+serverApp.use(cors({
+    origin: true,
     methods: ['GET', 'POST'],
     credentials: true,
 }));
 
 // API endpoint to get the list of JSON files
-app.get('/api/json-files', (req, res) => {
-    const dirPath = path.join(__dirname, 'user-files/saved-presets/');
+serverApp.get('/api/json-files', (req, res) => {
+    const dirPath = path.join(userFilesPath, 'saved-presets/');
     fs.readdir(dirPath, (err, files) => {
         if (err) {
-            return res.status(500).json({ error: 'Unable to scan directory' });
+            return res.status(500).json({ error: `${dirPath}` });
         }
 
         // Filter to return only .json files
@@ -48,11 +55,11 @@ app.get('/api/json-files', (req, res) => {
 });
 
 // API endpoint to get the list of image files
-app.get('/api/image-files', (req, res) => {
-    const dirPath = path.join(__dirname, 'user-files/saved-images/');
+serverApp.get('/api/image-files', (req, res) => {
+    const dirPath = path.join(userFilesPath, 'saved-images/');
     fs.readdir(dirPath, (err, files) => {
         if (err) {
-            return res.status(500).json({ error: 'Unable to scan directory' });
+            return res.status(500).json({ error: `${dirPath}` });
         }
 
         // Filter to return only image files with the specified extensions
@@ -66,14 +73,14 @@ app.get('/api/image-files', (req, res) => {
 });
 
 // Endpoint to save JSON data to the server
-app.post('/api/save-settings', (req, res) => {
+serverApp.post('/api/save-settings', (req, res) => {
     const { fileName, data } = req.body;
 
     if (!fileName || !data) {
         return res.status(400).json({ error: 'File name and data are required.' });
     }
 
-    const filePath = path.join(__dirname, 'user-files/saved-presets/', `${fileName}.json`);
+    const filePath = path.join(userFilesPath, 'saved-presets/', `${fileName}.json`);
     
     fs.writeFile(filePath, JSON.stringify(data, null, 2), (err) => {
         if (err) {
@@ -85,7 +92,7 @@ app.post('/api/save-settings', (req, res) => {
 });
 
 // API endpoint to upload an image
-app.post('/api/upload-image', upload.single('image'), (req, res) => {
+serverApp.post('/api/upload-image', upload.single('image'), (req, res) => {
     try {
       res.json({ message: 'Image uploaded successfully!', file: req.file });
     } catch (error) {
@@ -94,6 +101,8 @@ app.post('/api/upload-image', upload.single('image'), (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
-});
+// serverApp.listen(port, () => {
+//     console.log(`Server is running at http://localhost:${port}`);
+// });
+
+module.exports = serverApp;

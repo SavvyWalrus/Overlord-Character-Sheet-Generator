@@ -59,8 +59,21 @@
     "appId": "com.xxx.xxx",
     "productName": "xxx",
     "files": [
-      "**/*",
-      "build"
+      "build/**/*",
+      "src/electron-starter.js",
+      "src/electron-wait-react",
+      "src/preload.js",
+      "package.json",
+      "server.js"
+    ],
+    "extraFiles": [
+      {
+        "from": "./user-files",
+        "to": "resources/user-files/",
+        "filter": [
+          "**/*"
+        ]
+      }
     ],
     "directories": {
       "buildResources": "build"

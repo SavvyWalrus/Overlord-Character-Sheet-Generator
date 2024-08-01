@@ -20,16 +20,25 @@ const DropdownMenu = ({ label, options, onSelect, defaultSelection, className, j
         }
     }, [jsonSettings, jsonSettingName])
 
-    return (
-        <label className={className}>
-            {label}
-            <select value={selectedOption} onChange={handleChange}>
-                {options.map((option, index) => (
-                    <option key={index} value={option}>{option}</option>
-                ))}
-            </select>
-        </label>
-    );
+    try {
+        return (
+            <label className={className}>
+                {label}
+                <select value={selectedOption} onChange={handleChange}>
+                    {options.map((option, index) => (
+                        <option key={index} value={option}>{option}</option>
+                    ))}
+                </select>
+            </label>
+        );
+    } catch {
+        return (
+            <label className={className}>
+                {label}
+                <select></select>
+            </label>
+        );
+    }
 };
 
 function RenderTemplateSettings(props) {
@@ -40,18 +49,19 @@ function RenderTemplateSettings(props) {
     const setSelectedTemplateName = props.setSelectedTemplateName;
     const fileNames = props.fileNames;
     const savedImageFileNames = props.savedImageFileNames;
+    const basePath = props.basePath;
 
     const handlePresetSelect = useCallback(async (selectedOption) => {
         if (!selectedOption) return; // Avoid making fetch request if no option is selected
         
         try {
-            const jsonResponse = await fetch(`user-files/saved-presets/${selectedOption}.json`);
+            const jsonResponse = await fetch(`${basePath}saved-presets/${selectedOption}.json`); // FIXME
             if (!jsonResponse.ok) {
                 throw new Error('Network response was not ok');
             }
             const newSettings = await jsonResponse.json();
-            const newCharacterImage = `user-files/saved-images/${newSettings["CharacterImageName"]}`;
-            const newTemplateImage = `templates/${newSettings["TemplateImageName"]}`;
+            const newCharacterImage = `${basePath}saved-images/${newSettings["CharacterImageName"]}`;
+            const newTemplateImage = `${basePath}templates/${newSettings["TemplateImageName"]}`;
 
             setJsonSettings(newSettings);
             setSelectedTemplate(newTemplateImage);
@@ -60,13 +70,13 @@ function RenderTemplateSettings(props) {
         } catch (error) {
             console.error('There has been a problem with your fetch operation:', error);
         };
-    }, [setJsonSettings, setSelectedCharacterImage, setSelectedTemplate, setSelectedTemplateName]);
+    }, [setJsonSettings, setSelectedCharacterImage, setSelectedTemplate, setSelectedTemplateName, basePath]);
 
     const handleCharacterImageSelect = useCallback(async (selectedOption) => {
         if (!selectedOption) return; // Avoid making fetch request if no option is selected
         
         try {
-            const response = await fetch(`user-files/saved-images/${selectedOption}`);
+            const response = await fetch(`${basePath}saved-images/${selectedOption}`); //FIXME
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -84,13 +94,13 @@ function RenderTemplateSettings(props) {
         } catch (error) {
             console.error('There has been a problem with your fetch operation:', error);
         };
-    }, [jsonSettings, setJsonSettings, setSelectedCharacterImage]);
+    }, [jsonSettings, setJsonSettings, setSelectedCharacterImage, basePath]);
 
     const handleTemplateImageSelect = useCallback(async (selectedOption) => {
         if (!selectedOption) return; // Avoid making fetch request if no option is selected
         
         try {
-            const response = await fetch(`/templates/${selectedOption}`);
+            const response = await fetch(`${basePath}/templates/${selectedOption}`); // FIXME
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -109,7 +119,7 @@ function RenderTemplateSettings(props) {
         } catch (error) {
             console.error('There has been a problem with your fetch operation:', error);
         };
-    }, [jsonSettings, setJsonSettings, setSelectedTemplate, setSelectedTemplateName]);
+    }, [jsonSettings, setJsonSettings, setSelectedTemplate, setSelectedTemplateName, basePath]);
 
     return (
         <div className="template-settings">

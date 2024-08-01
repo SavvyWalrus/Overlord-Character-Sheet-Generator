@@ -18,6 +18,12 @@ if (RESIZABLE) {
   minWidth = "";
 }
 
+function getBasePath() {
+  //return 'user-files/'; // Comment out on production
+  const isProduction = window.electronAPI ? true : false;
+  return isProduction ? window.electronAPI.getResourcePath() + '/user-files/': 'user-files/';
+}
+
 function App() {
   const [jsonSettings, setJsonSettings] = useState({});
   const [fontSize, setFontSize] = useState();
@@ -28,6 +34,7 @@ function App() {
   const [savedImageFileNames, setSavedImageFileNames] = useState([]);
   const characterSheetRef = useRef(null);
   const userInputRef = useRef(null);
+  const basePath = getBasePath();
 
   // Handles resizing of elements for varying screen sizes via changing font size
   const handleResize = () => {
@@ -50,14 +57,14 @@ function App() {
       formData.append('image', file);
 
       // Send the image file to the server
-      fetch('/api/upload-image', {
+      fetch('http://localhost:3001/api/upload-image', {
         method: 'POST',
         body: formData,
       })
       .then(response => response.json())
       .then(data => {
         if (data.file) {
-          const imageUrl = `/user-files/saved-images/${data.file.filename}`;
+          const imageUrl = `${basePath}/saved-images/${data.file.filename}`;
           setSelectedCharacterImage(imageUrl);
           console.log('Image uploaded successfully:', data);
           let tempSettings = {...jsonSettings};
@@ -103,6 +110,7 @@ function App() {
                                 setSelectedCharacterImage={setSelectedCharacterImage}
                                 fileNames={fileNames}
                                 savedImageFileNames={savedImageFileNames}
+                                basePath={basePath}
         />
       </div>
       
@@ -116,7 +124,7 @@ function App() {
 
       {/* Container for user input character sheet */}
       <div className='user-input-container' ref={userInputRef} style={{ fontSize, minWidth }}>
-        <LoadTemplate selectedTemplate={'/templates/Input-Template.png'} />
+        <LoadTemplate selectedTemplate={`${basePath}/templates/Input-Template.png`} />
         <RenderAllFields jsonSettings={jsonSettings} setJsonSettings={setJsonSettings} handleCharacterImageChange={handleCharacterImageChange} setSavedImageFileNames={setSavedImageFileNames} />
         <DownloadImageButton characterSheetRef={characterSheetRef} />
         <SaveJson jsonSettings={jsonSettings} setFileNames={setFileNames} fileName={jsonSettings["RomanjiName1"] + (jsonSettings["RomanjiName2"] !== "" ? " " + jsonSettings["RomanjiName2"] : "")} />
