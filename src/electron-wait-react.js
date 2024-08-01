@@ -1,3 +1,4 @@
+// Ensures react is running before starting electron
 const net = require('net');
 const port = process.env.PORT ? (process.env.PORT - 100) : 3000;
 

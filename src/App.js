@@ -11,29 +11,30 @@ import DownloadImageButton from './components/DownloadImage.js';
 import SaveJson from './components/SaveJson.js'
 import RenderTemplateSettings from './components/TemplateSettings.js';
 
-var RESIZABLE = false;
+var RESIZABLE = false; // Change to true to allow for resizing of page ; Affects html2canvas output image quality at different sizes
 var minWidth = "50rem";
 
 if (RESIZABLE) {
   minWidth = "";
 }
 
+// Ensures proper path is used for development vs production builds
 function getBasePath() {
   const isDevelopment = process.env.NODE_ENV === 'development';
   return isDevelopment ? 'user-files/' : window.electronAPI.getResourcePath() + '/user-files';
 }
 
 function App() {
-  const [jsonSettings, setJsonSettings] = useState({});
-  const [fontSize, setFontSize] = useState();
-  const [selectedCharacterImage, setSelectedCharacterImage] = useState(null);
-  const [selectedTemplate, setSelectedTemplate] = useState(null);
-  const [selectedTemplateName, setSelectedTemplateName] = useState("")
-  const [fileNames, setFileNames] = useState([]);
-  const [savedImageFileNames, setSavedImageFileNames] = useState([]);
-  const characterSheetRef = useRef(null);
-  const userInputRef = useRef(null);
-  const basePath = getBasePath();
+  const [jsonSettings, setJsonSettings] = useState({}); // Holds the current user settings
+  const [fontSize, setFontSize] = useState(); // Holds the current font size for resizing
+  const [selectedCharacterImage, setSelectedCharacterImage] = useState(null); // Holds the current character image
+  const [selectedTemplate, setSelectedTemplate] = useState(null); // Holds the current template image
+  const [selectedTemplateName, setSelectedTemplateName] = useState("") // Holds the name of the current template image ; Used for menu refreshing
+  const [settingsFileNames, setSettingsFileNames] = useState([]); // Holds the file names for all stored character settings ; Used for menu list
+  const [savedImageFileNames, setSavedImageFileNames] = useState([]); // Holds the file names for all stored character images ; Used for menu list
+  const characterSheetRef = useRef(null); // Reference variable for character sheet ; Used for image downloading
+  const userInputRef = useRef(null); // Reference variable for user input sheet
+  const basePath = getBasePath(); // Variable for file pathing
 
   // Handles resizing of elements for varying screen sizes via changing font size
   const handleResize = () => {
@@ -107,7 +108,7 @@ function App() {
                                 setSelectedTemplate={setSelectedTemplate}
                                 setSelectedTemplateName={setSelectedTemplateName}
                                 setSelectedCharacterImage={setSelectedCharacterImage}
-                                fileNames={fileNames}
+                                settingsFileNames={settingsFileNames}
                                 savedImageFileNames={savedImageFileNames}
                                 basePath={basePath}
         />
@@ -126,7 +127,7 @@ function App() {
         <LoadTemplate selectedTemplate={`${basePath}/templates/Input-Template.png`} />
         <RenderAllFields jsonSettings={jsonSettings} setJsonSettings={setJsonSettings} handleCharacterImageChange={handleCharacterImageChange} setSavedImageFileNames={setSavedImageFileNames} />
         <DownloadImageButton characterSheetRef={characterSheetRef} />
-        <SaveJson jsonSettings={jsonSettings} setFileNames={setFileNames} fileName={jsonSettings["RomanjiName1"] + (jsonSettings["RomanjiName2"] !== "" ? " " + jsonSettings["RomanjiName2"] : "")} />
+        <SaveJson jsonSettings={jsonSettings} setSettingsFileNames={setSettingsFileNames} fileName={jsonSettings["RomanjiName1"] + (jsonSettings["RomanjiName2"] !== "" ? " " + jsonSettings["RomanjiName2"] : "")} />
       </div>
     </div>
   );

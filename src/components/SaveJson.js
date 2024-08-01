@@ -6,7 +6,7 @@ const SaveJson = (props) => {
   const [finishedSaving, setFinishedSaving] = useState(true);
   const jsonSettings = props.jsonSettings;
   const fileName = props.fileName;
-  const setFileNames = props.setFileNames;
+  const setSettingsFileNames = props.setSettingsFileNames;
 
   const handleDownloadJson = () => {
     const jsonData = JSON.stringify(jsonSettings, null, 2); // Pretty-print the JSON
@@ -52,11 +52,11 @@ const SaveJson = (props) => {
       fetch('http://localhost:3001/api/json-files')
         .then(response => response.json())
         .then(data => {
-          setFileNames(data);
+          setSettingsFileNames(data);
         })
         .catch(error => console.error('Error fetching file names:', error));
     }
-  }, [finishedSaving, setFileNames]);
+  }, [finishedSaving, setSettingsFileNames]);
 
   return (
     <div>

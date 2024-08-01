@@ -47,7 +47,7 @@ function RenderTemplateSettings(props) {
     const setSelectedCharacterImage = props.setSelectedCharacterImage;
     const setSelectedTemplate = props.setSelectedTemplate;
     const setSelectedTemplateName = props.setSelectedTemplateName;
-    const fileNames = props.fileNames;
+    const settingsFileNames = props.settingsFileNames;
     const savedImageFileNames = props.savedImageFileNames;
     const basePath = props.basePath;
 
@@ -124,7 +124,7 @@ function RenderTemplateSettings(props) {
     return (
         <div className="template-settings">
             <DropdownMenu onSelect={handlePresetSelect} 
-                options={fileNames}
+                options={settingsFileNames}
                 label="Select Preset: "
                 defaultSelection="Momonga"
                 className="preset-dropdown"

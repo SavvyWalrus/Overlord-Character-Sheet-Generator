@@ -100,7 +100,7 @@ serverApp.post('/api/upload-image', upload.single('image'), (req, res) => {
     }
 });
 
-// Start the server
+// Start the server : Used only when not running electron / electron-starter.js handles server initialization in 'npm run dev'
 // serverApp.listen(port, () => {
 //     console.log(`Server is running at http://localhost:${port}`);
 // });
