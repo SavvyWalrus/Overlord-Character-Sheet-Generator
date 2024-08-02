@@ -3,7 +3,8 @@
     - Character setting presets: `resources/user-files/saved-presets`
     - Character images: `resources/user-files/saved-images`
     - Templates: `resources/user-files/templates`
-- Settings are saved by name and will overwrite in the case of a naming conflict
+- Settings are saved by name and will overwrite in the case of a naming conflict.
+- User templates can be used but ones for humanoids must include 'Humanoid' in the file name.
 
 
 # Development

@@ -184,10 +184,10 @@ function RenderAcquiredLevels(props) {
     const selectedTemplateName=props.selectedTemplateName;
     let classNameTail = ""
 
-    if (selectedTemplateName === "Heteromorph-Demihuman.png") {
-        classNameTail = "-heteromorph-demihuman";
-    } else {
+    if (selectedTemplateName.includes("Humanoid")) {
         classNameTail = "-human";
+    } else {
+        classNameTail = "-heteromorph-demihuman";
     }
     
     return (

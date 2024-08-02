@@ -2,5 +2,6 @@
 const { contextBridge } = require('electron');
 
 contextBridge.exposeInMainWorld('electronAPI', {
-    getResourcePath: () => process.resourcesPath
+    getResourcePath: () => process.resourcesPath,
+    getExePath: () => process.env.PORTABLE_EXECUTABLE_DIR
 });

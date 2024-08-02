@@ -72,6 +72,25 @@ serverApp.get('/api/image-files', (req, res) => {
     });
 });
 
+// API endpoint to get the list of template image files
+serverApp.get('/api/template-images', (req, res) => {
+    const dirPath = path.join(userFilesPath, 'templates/');
+    fs.readdir(dirPath, (err, files) => {
+        if (err) {
+            return res.status(500).json({ error: `${dirPath}` });
+        }
+
+        // Filter to return only image files with the specified extensions
+        const templateImageNames = files.filter(file => {
+            const ext = path.extname(file).toLowerCase();
+            if (file.includes('Input-Template')) return false;
+            return ext === '.png' || ext === '.jpg' || ext === '.jpeg';
+        });
+
+        res.json(templateImageNames);
+    });
+});
+
 // Endpoint to save JSON data to the server
 serverApp.post('/api/save-settings', (req, res) => {
     const { fileName, data } = req.body;

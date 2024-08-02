@@ -42,6 +42,8 @@ const DropdownMenu = ({ label, options, onSelect, defaultSelection, className, j
 };
 
 function RenderTemplateSettings(props) {
+    const [selectedCharacterImageName, setSelectedCharacterImageName] = useState("");
+    const [templateImageNames, setTemplateImageNames] = useState([]);
     const jsonSettings = props.jsonSettings;
     const setJsonSettings = props.setJsonSettings;
     const setSelectedCharacterImage = props.setSelectedCharacterImage;
@@ -90,6 +92,7 @@ function RenderTemplateSettings(props) {
                 tempSettings["CharacterImageName"] = selectedOption;
                 setJsonSettings(tempSettings);
                 setSelectedCharacterImage(newCharacterImage);
+                setSelectedCharacterImageName(selectedOption);
             }
         } catch (error) {
             console.error('There has been a problem with your fetch operation:', error);
@@ -121,6 +124,16 @@ function RenderTemplateSettings(props) {
         };
     }, [jsonSettings, setJsonSettings, setSelectedTemplate, setSelectedTemplateName, basePath]);
 
+    useEffect(() => {
+        fetch('http://localhost:3001/api/template-images')
+            .then(response => response.json())
+            .then(data => {
+                setTemplateImageNames(data);
+            })
+            .catch(error => console.error('Error fetching image file names:', error));
+            // eslint-disable-next-line
+    }, []);
+
     return (
         <div className="template-settings">
             <DropdownMenu onSelect={handlePresetSelect} 
@@ -132,13 +145,13 @@ function RenderTemplateSettings(props) {
             <DropdownMenu onSelect={handleCharacterImageSelect} 
                 options={savedImageFileNames}
                 label="Select Character Image: "
-                defaultSelection="01-Momonga.jpg"
+                defaultSelection={selectedCharacterImageName}
                 className="character-image-dropdown"
                 jsonSettings={jsonSettings}
                 jsonSettingName="CharacterImageName"
             />
             <DropdownMenu onSelect={handleTemplateImageSelect} 
-                options={["Heteromorph-Demihuman.png", "Humanoid.png"]}
+                options={templateImageNames}
                 label="Select Template Image: "
                 defaultSelection="Heteromorph-Demihuman.png"
                 className="template-image-dropdown"

@@ -17,10 +17,10 @@ function RacialLevelBar({ value=0, maxValue=100, selectedTemplateName }) {
     const percentage = (value / maxValue) * 100;
     let classNameTail = ""
 
-    if (selectedTemplateName === "Heteromorph-Demihuman.png") {
-        classNameTail = "-heteromorph-demihuman";
-    } else {
+    if (selectedTemplateName.includes("Humanoid")) {
         classNameTail = "-human";
+    } else {
+        classNameTail = "-heteromorph-demihuman";
     }
 
     return (
@@ -37,10 +37,10 @@ function JobLevelBar({ value=0, maxValue=100, selectedTemplateName }) {
     const percentage = (value / maxValue) * 100;
     let classNameTail = ""
 
-    if (selectedTemplateName === "Heteromorph-Demihuman.png") {
-        classNameTail = "-heteromorph-demihuman";
-    } else {
+    if (selectedTemplateName.includes("Humanoid")) {
         classNameTail = "-human";
+    } else {
+        classNameTail = "-heteromorph-demihuman";
     }
 
     return (
