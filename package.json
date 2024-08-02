@@ -1,6 +1,6 @@
 {
   "name": "character-sheet-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "SavvyWalrus",
   "description": "A tool for building Overlord Character Sheets",
   "private": true,
@@ -84,8 +84,7 @@
     "asar": true,
     "extends": null,
     "win": {
-      "target": "nsis",
-      "icon": "assets/icons/win/icon.ico"
+      "target": "nsis"
     },
     "portable": {
         "artifactName": "${productName}.${ext}"
