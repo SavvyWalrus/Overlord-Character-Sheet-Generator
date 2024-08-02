@@ -141,14 +141,14 @@ function RenderClassLevels(props) {
                     {raceOthers ? <div className="racial-type-last"><p>Others<span className="last-filler">■■■■■■■■■■■■■■■■■■■■■■■■■■</span></p></div> : <div></div>}
                 </div>
                 <div className="racial-levels-container">
-                    {numVisibleRacialClasses >= 1 && jsonSettings["RaceLevel1"] > 0 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel1}</span></p></div> : <div><p></p></div>}
-                    {numVisibleRacialClasses >= 2 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel2}</span></p></div> : <div><p></p></div>}
-                    {numVisibleRacialClasses >= 3 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel3}</span></p></div> : <div><p></p></div>}
-                    {numVisibleRacialClasses >= 4 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel4}</span></p></div> : <div><p></p></div>}
-                    {numVisibleRacialClasses >= 5 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel5}</span></p></div> : <div><p></p></div>}
-                    {numVisibleRacialClasses >= 6 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel6}</span></p></div> : <div><p></p></div>}
-                    {numVisibleRacialClasses >= 7 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel7}</span></p></div> : <div><p></p></div>}
-                    {numVisibleRacialClasses >= 8 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel8}</span></p></div> : <div><p></p></div>}
+                    {numVisibleRacialClasses >= 1 && jsonSettings["RaceLevel1"] > 0 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel1}</span></p></div> : <div className="racial-levels"><p><span className="lvl-num-H">⠀</span></p></div>}
+                    {numVisibleRacialClasses >= 2 && jsonSettings["RaceLevel2"] > 0 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel2}</span></p></div> : <div className="racial-levels"><p><span className="lvl-num-H">⠀</span></p></div>}
+                    {numVisibleRacialClasses >= 3 && jsonSettings["RaceLevel3"] > 0 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel3}</span></p></div> : <div className="racial-levels"><p><span className="lvl-num-H">⠀</span></p></div>}
+                    {numVisibleRacialClasses >= 4 && jsonSettings["RaceLevel4"] > 0 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel4}</span></p></div> : <div className="racial-levels"><p><span className="lvl-num-H">⠀</span></p></div>}
+                    {numVisibleRacialClasses >= 5 && jsonSettings["RaceLevel5"] > 0 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel5}</span></p></div> : <div className="racial-levels"><p><span className="lvl-num-H">⠀</span></p></div>}
+                    {numVisibleRacialClasses >= 6 && jsonSettings["RaceLevel6"] > 0 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel6}</span></p></div> : <div className="racial-levels"><p><span className="lvl-num-H">⠀</span></p></div>}
+                    {numVisibleRacialClasses >= 7 && jsonSettings["RaceLevel7"] > 0 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel7}</span></p></div> : <div className="racial-levels"><p><span className="lvl-num-H">⠀</span></p></div>}
+                    {numVisibleRacialClasses >= 8 && jsonSettings["RaceLevel8"] > 0 ? <div className="racial-levels"><p><span className="level-text-H">lvl</span><span className="lvl-num-H">{raceLevel8}</span></p></div> : <div className="racial-levels"><p><span className="lvl-num-H">⠀</span></p></div>}
                 </div>
             </div>
             <div className="job-class-container">
@@ -165,14 +165,14 @@ function RenderClassLevels(props) {
                     {Array.from({ length: 8 - numClassLines }, (_, index) => (<div key={index} className="class-levels-footer"><p className="last-filler">■■■■■■■■■■■■■■■■■■■■■■■■■■</p></div>))}
                 </div>
                 <div className="job-class-levels-container" style={{top: `calc(30em + ${raceOthers ? '1.75em + ' : ''}1.9em * ${numVisibleRacialClasses})`}}>
-                    {numVisibleJobClasses >= 1 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel1}</span></p></div> : <div><p></p></div>}
-                    {numVisibleJobClasses >= 2 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel2}</span></p></div> : <div><p></p></div>}
-                    {numVisibleJobClasses >= 3 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel3}</span></p></div> : <div><p></p></div>}
-                    {numVisibleJobClasses >= 4 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel4}</span></p></div> : <div><p></p></div>}
-                    {numVisibleJobClasses >= 5 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel5}</span></p></div> : <div><p></p></div>}
-                    {numVisibleJobClasses >= 6 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel6}</span></p></div> : <div><p></p></div>}
-                    {numVisibleJobClasses >= 7 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel7}</span></p></div> : <div><p></p></div>}
-                    {numVisibleJobClasses >= 8 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel8}</span></p></div> : <div><p></p></div>}
+                    {numVisibleJobClasses >= 1 && jsonSettings["JobLevel1"] > 0 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel1}</span></p></div> : <div className="job-class-levels"><p><span className="lvl-num-L">⠀</span></p></div>}
+                    {numVisibleJobClasses >= 2 && jsonSettings["JobLevel2"] > 0 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel2}</span></p></div> : <div className="job-class-levels"><p><span className="lvl-num-L">⠀</span></p></div>}
+                    {numVisibleJobClasses >= 3 && jsonSettings["JobLevel3"] > 0 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel3}</span></p></div> : <div className="job-class-levels"><p><span className="lvl-num-L">⠀</span></p></div>}
+                    {numVisibleJobClasses >= 4 && jsonSettings["JobLevel4"] > 0 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel4}</span></p></div> : <div className="job-class-levels"><p><span className="lvl-num-L">⠀</span></p></div>}
+                    {numVisibleJobClasses >= 5 && jsonSettings["JobLevel5"] > 0 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel5}</span></p></div> : <div className="job-class-levels"><p><span className="lvl-num-L">⠀</span></p></div>}
+                    {numVisibleJobClasses >= 6 && jsonSettings["JobLevel6"] > 0 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel6}</span></p></div> : <div className="job-class-levels"><p><span className="lvl-num-L">⠀</span></p></div>}
+                    {numVisibleJobClasses >= 7 && jsonSettings["JobLevel7"] > 0 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel7}</span></p></div> : <div className="job-class-levels"><p><span className="lvl-num-L">⠀</span></p></div>}
+                    {numVisibleJobClasses >= 8 && jsonSettings["JobLevel8"] > 0 ? <div className="job-class-levels"><p><span className="level-text-L">lvl</span><span className="lvl-num-L">{jobLevel8}</span></p></div> : <div className="job-class-levels"><p><span className="lvl-num-L">⠀</span></p></div>}
                 </div>
             </div>
         </div>
