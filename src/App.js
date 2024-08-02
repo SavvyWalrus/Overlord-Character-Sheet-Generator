@@ -21,7 +21,13 @@ if (RESIZABLE) {
 // Ensures proper path is used for development vs production builds
 function getBasePath() {
   const isDevelopment = process.env.NODE_ENV === 'development';
-  return isDevelopment ? 'user-files' : window.electronAPI.getExePath() + '/resources/user-files';
+  if (isDevelopment) {
+    return 'user-files';
+  } else if (window.electronAPI.getExePath()) {
+    return window.electronAPI.getExePath() + '/resources/user-files'; // Useful for portable mode
+  } else {
+    return window.electronAPI.getResourcePath() + '/user-files';
+  }
 }
 
 function App() {
