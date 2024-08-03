@@ -83,11 +83,28 @@ function RenderResidenceDescription(props) {
 
 function RenderAlignment(props) {
     const jsonSettings=props.jsonSettings;
+
+    const parseKarmaValue = (karmaValue) => {
+        if (!karmaValue) return "";
+        const karmaString = karmaValue.toString();
+
+        // Use a regular expression to match the sign and the numbers
+        const signMatch = karmaString.match(/^-?/);
+        const numberMatch = karmaString.match(/\d+/);
+
+        // Extract the sign and the numbers
+        const sign = signMatch ? signMatch[0] : '';
+        const numbers = numberMatch ? numberMatch[0] : '';
+
+        return { sign, numbers };
+    }
+
+    const { sign, numbers } = parseKarmaValue(jsonSettings["KarmaValue"]);
     
     return (
         <div className="alignment-container">
             <div className="alignment-label"><p><span id="alignment-text">Alignment </span><span id="input-alignment-label">{jsonSettings["AlignmentText"]}</span></p></div>
-            <div className="karma-value"><p><span>{"["}</span>Karma Value: {jsonSettings["KarmaValue"]}<span>{"]"}</span></p></div>
+            <div className="karma-value"><p><span id="karma-bracket">{"["}</span>Karma Value: <span id="karma-sign">{sign}</span>{numbers}<span id="karma-bracket">{"]"}</span></p></div>
         </div>
     )
 }
