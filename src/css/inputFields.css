@@ -162,61 +162,61 @@
 
 
 /* Name Fields */
-    .romanji-name-input-1 {
+    .romaji-name-input-1 {
         position: absolute;
         top: 0.15em;
         left: 22.5em;
     }
 
-    .romanji-name-input-1 input {
+    .romaji-name-input-1 input {
         font-size: 0.83em;
         width: 12em;
         height: 1.2em;
     }
 
-    .romanji-name-input-2 {
+    .romaji-name-input-2 {
         position: absolute;
         top: 1.55em;
         left: 22.5em;
     }
 
-    .romanji-name-input-2 input {
+    .romaji-name-input-2 input {
         font-size: 0.83em;
         width: 12em;
         height: 1.2em;
     }
 
-    .romanji-secondary-name-input {
+    .romaji-secondary-name-input {
         position: absolute;
         top: 4em;
         left: 22.5em;
     }
 
-    .romanji-secondary-name-input input {
+    .romaji-secondary-name-input input {
         font-size: 0.83em;
         width: 12em;
         height: 1.2em;
     }
 
-    .hiragana-name-input {
+    .katakana-name-input {
         position: absolute;
         top: 5.7em;
         left: 22.5em;
     }
 
-    .hiragana-name-input input {
+    .katakana-name-input input {
         font-size: 0.83em;
         width: 12em;
         height: 1.2em;
     }
 
-    .hiragana-secondary-name-input {
+    .katakana-secondary-name-input {
         position: absolute;
         top: 7em;
         left: 22.5em;
     }
 
-    .hiragana-secondary-name-input input {
+    .katakana-secondary-name-input input {
         font-size: 0.83em;
         width: 12em;
         height: 1.2em;

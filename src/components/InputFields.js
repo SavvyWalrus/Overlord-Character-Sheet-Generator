@@ -121,11 +121,11 @@ function RenderAllFields(props) {
             </div>
 
             <div className="name-fields">
-                <div className="romanji-name-input-1"><TextInput value={jsonSettings["RomanjiName1"]} settingName="RomanjiName1" changeSetting={changeSetting} /></div>
-                <div className="romanji-name-input-2"><TextInput value={jsonSettings["RomanjiName2"]} settingName="RomanjiName2" changeSetting={changeSetting} /></div>
-                <div className="romanji-secondary-name-input"><TextInput value={jsonSettings["RomanjiSecondaryName"]} settingName="RomanjiSecondaryName" changeSetting={changeSetting} /></div>
-                <div className="hiragana-name-input"><TextInput value={jsonSettings["HiraganaName"]} settingName="HiraganaName" changeSetting={changeSetting} /></div>
-                <div className="hiragana-secondary-name-input"><TextInput value={jsonSettings["HiraganaSecondaryName"]} settingName="HiraganaSecondaryName" changeSetting={changeSetting} /></div>
+                <div className="romaji-name-input-1"><TextInput value={jsonSettings["RomajiName1"]} settingName="RomajiName1" changeSetting={changeSetting} /></div>
+                <div className="romaji-name-input-2"><TextInput value={jsonSettings["RomajiName2"]} settingName="RomajiName2" changeSetting={changeSetting} /></div>
+                <div className="romaji-secondary-name-input"><TextInput value={jsonSettings["RomajiSecondaryName"]} settingName="RomajiSecondaryName" changeSetting={changeSetting} /></div>
+                <div className="katakana-name-input"><TextInput value={jsonSettings["KatakanaName"]} settingName="KatakanaName" changeSetting={changeSetting} /></div>
+                <div className="katakana-secondary-name-input"><TextInput value={jsonSettings["KatakanaSecondaryName"]} settingName="KatakanaSecondaryName" changeSetting={changeSetting} /></div>
             </div>
             
             <div className="description-fields">

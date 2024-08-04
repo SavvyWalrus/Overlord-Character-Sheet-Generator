@@ -97,11 +97,11 @@
 
 /* Name text */
 	.name-container,
-	.romanji-name-1,
-	.romanji-name-2,
-	.romanji-secondary-name,
-	.hiragana-name,
-	.hiragana-secondary-name {
+	.romaji-name-1,
+	.romaji-name-2,
+	.romaji-secondary-name,
+	.katakana-name,
+	.katakana-secondary-name {
 		position: absolute;
 	}
 
@@ -110,57 +110,57 @@
 		left: 22.5em;
 	}
 
-	.romanji-name-1 {
+	.romaji-name-1 {
 		top: 2.5em;
 	}
 
-	.romanji-name-2 {
+	.romaji-name-2 {
 		top: 5em;
 	}
 
-	.romanji-secondary-name {
+	.romaji-secondary-name {
 		top: 6.4em;
 	}
 
-	.hiragana-name {
+	.katakana-name {
 		top: 7.15em;
 	}
 
-	.hiragana-secondary-name {
+	.katakana-secondary-name {
 		top: 9.8em;
 	}
 
 	/* Text */
-	.romanji-name-1 p,
-	.romanji-name-2 p {
+	.romaji-name-1 p,
+	.romaji-name-2 p {
 		font-family: 'Packard Antique Bold';
 		/* Variable must match font size */
-		--romanji-font-size: 2.3;
+		--romaji-font-size: 2.3;
 		font-size: 2.3em;
 		margin: 0;
 		text-wrap: nowrap;
 		letter-spacing: 0.01em;
 	}
 
-	.romanji-name-1 p .secondary-letters,
-	.romanji-name-2 p .secondary-letters {
-		font-size: calc(1.7em / var(--romanji-font-size));
+	.romaji-name-1 p .secondary-letters,
+	.romaji-name-2 p .secondary-letters {
+		font-size: calc(1.7em / var(--romaji-font-size));
 	}
 
-	.romanji-secondary-name p {
+	.romaji-secondary-name p {
 		font-family: 'Packard Antique';
 		font-size: 0.9em;
 		text-wrap: nowrap;
 	}
 
-	.hiragana-name p {
+	.katakana-name p {
 		font-family: 'Shippori Mincho';
 		font-size: 1.2em;
 		letter-spacing: -0.1em;
 		text-wrap: nowrap;
 	}
 
-	.hiragana-secondary-name p {
+	.katakana-secondary-name p {
 		font-family: 'Shippori Mincho';
 		font-size: 0.7em;
 		letter-spacing: -0.15em;

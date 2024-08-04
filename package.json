@@ -1,6 +1,6 @@
 {
   "name": "character-sheet-builder",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "author": "SavvyWalrus",
   "description": "A tool for building Overlord Character Sheets",
   "private": true,

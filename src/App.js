@@ -133,7 +133,7 @@ function App() {
         <LoadTemplate selectedTemplate={`${basePath}/templates/Input-Template.png`} />
         <RenderAllFields jsonSettings={jsonSettings} setJsonSettings={setJsonSettings} handleCharacterImageChange={handleCharacterImageChange} setSavedImageFileNames={setSavedImageFileNames} />
         <DownloadImageButton characterSheetRef={characterSheetRef} />
-        <SaveJson jsonSettings={jsonSettings} setSettingsFileNames={setSettingsFileNames} fileName={jsonSettings["RomanjiName1"] + (jsonSettings["RomanjiName2"] !== "" ? " " + jsonSettings["RomanjiName2"] : "")} />
+        <SaveJson jsonSettings={jsonSettings} setSettingsFileNames={setSettingsFileNames} fileName={jsonSettings["RomajiName1"] + (jsonSettings["RomajiName2"] !== "" ? " " + jsonSettings["RomajiName2"] : "")} />
       </div>
     </div>
   );

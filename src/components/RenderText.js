@@ -38,11 +38,11 @@ function RenderName(props) {
     
     return (
         <div className="name-container">
-            <div className="romanji-name-1">{transformName(jsonSettings["RomanjiName1"])}</div>
-            <div className="romanji-name-2">{transformName(jsonSettings["RomanjiName2"])}</div>
-            <div className="romanji-secondary-name"><p>{jsonSettings["RomanjiSecondaryName"]}</p></div>
-            <div className="hiragana-name"><p>{jsonSettings["HiraganaName"]}</p></div>
-            <div className="hiragana-secondary-name"><p>{jsonSettings["HiraganaSecondaryName"]}</p></div>
+            <div className="romaji-name-1">{transformName(jsonSettings["RomajiName1"])}</div>
+            <div className="romaji-name-2">{transformName(jsonSettings["RomajiName2"])}</div>
+            <div className="romaji-secondary-name"><p>{jsonSettings["RomajiSecondaryName"]}</p></div>
+            <div className="katakana-name"><p>{jsonSettings["KatakanaName"]}</p></div>
+            <div className="katakana-secondary-name"><p>{jsonSettings["KatakanaSecondaryName"]}</p></div>
         </div>
     )
 }
@@ -169,7 +169,7 @@ function RenderClassLevels(props) {
                 </div>
             </div>
             <div className="job-class-container">
-                <div className="job-class-type-container" style={{top: `calc(30.2em + ${raceOthers ? '1.75em + ' : ''}1.9em * ${numVisibleRacialClasses})`}}>
+                <div className="job-class-type-container" style={{top: `calc(30.2em + ${raceOthers ? '1.87em + ' : ''}1.9em * ${numVisibleRacialClasses})`}}>
                     {numVisibleJobClasses >= 1 ? <div className="job-class-1"><p><span id="class-levels-text">Class Levels </span><span id="job-class-1-text">{jsonSettings["JobClass1"]}</span></p></div> : <div></div>}
                     {numVisibleJobClasses >= 2 ? <div className="job-class-2"><p>{jsonSettings["JobClass2"]}</p></div> : <div></div>}
                     {numVisibleJobClasses >= 3 ? <div className="job-class-3"><p>{jsonSettings["JobClass3"]}</p></div> : <div></div>}
